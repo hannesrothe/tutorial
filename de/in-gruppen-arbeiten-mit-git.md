@@ -10,6 +10,44 @@ Nach Einrichtung von Git werden zwei Orte für dich wichtig sein. Die Entwicklun
 
 > **Hinweis:** Falls du die Installationsschritte bereits durchgeführt hast, kannst du mit dem nächsten Abschnitt fortfahren und anfangen, dein Git-Repository zu erstellen.
 
+### Git installieren <a id="git-installieren"></a>
+
+#### **Installing Git: Windows**
+
+Du kannst Git von [git-scm.com](https://git-scm.com/) herunterladen. Du kannst bei allen Schritten außer zweien "next" klicken: Wähle im Schritt, in dem du einen Editor aussuchen sollst, "Nano"; und bei der Anweisung "Adjusting your PATH environment", wähle die Einstellung "Run Git and associated Unix tools from the Windows command-line" \(die letzte Option\). Die anderen Voreinstellungen sind ok. "Checkout"-Stil "Windows" und "Commit" mit "Unix line endings" \(Zeilenende im Unix-Format\) sind die richtigen Einstellungen.
+
+Nach Abschluss der Installation musst du deine Command-Shell oder Powershell neu starten, damit die Einstellungen aktiv sind.
+
+#### **Installing Git: OS X**
+
+Lade Git von [git-scm.com](https://git-scm.com/) herunter und folge dann den Anweisungen.
+
+> **Hinweis:** Falls du OS X 10.6, 10.7, oder 10.8 verwendest, muss du die Git-Version unter folgendem Link installieren: [Git installer for OS X Snow Leopard](https://sourceforge.net/projects/git-osx-installer/files/git-2.3.5-intel-universal-snow-leopard.dmg/download)
+
+#### **Installing Git: Debian or Ubuntu**
+
+command-line
+
+```text
+$ sudo apt install git
+```
+
+#### **Installing Git: Fedora**
+
+command-line
+
+```text
+$ sudo dnf install git
+```
+
+#### **Installing Git: openSUSE**
+
+command-line
+
+```text
+$ sudo zypper install git
+```
+
 ### Unser Git-Repository
 
 Git verwaltet die Veränderungen an einer Sammlung von Dateien in einem sogenannten Repository \(oder kurz "Repo"\). Legen wir eines für unser Projekt an. Öffne deine Konsole und gibt folgende Kommandos im `djangogirls`-Verzeichnis ein:

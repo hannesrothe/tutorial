@@ -20,17 +20,19 @@ Python entstand in den späten 1980ern mit dem Hauptziel, von Menschen lesbar zu
 
 Django ist in Python geschrieben. Wir brauchen Python für alles in Django. Fangen wir mit der Installation an! Wir möchten, dass du Python 3 installierst. Solltest du also bereits eine ältere Version installiert haben, musst du diese aktualisieren. Wenn du schon Version 3.4 oder höher besitzt, ist das in Ordnung.
 
+### **Install Python: Windows**
+
 Bitte schau zuerst auf der "Systemtyp"-Zeile der Systeminformationsseite nach, ob auf deinem Computer eine 32-Bit-Version oder eine 64-Bit-Version von Windows läuft. Um diese Seite zu finden, versuche eine der folgenden Methoden:
 
 * Drücke die Windows-Taste und die Pause/Break-Taste zur selben Zeit
 * Öffne dein Control Panel über das Windows Menü und navigiere dann zu System & Sicherheit, dann System
 * Drücke die Windows-Taste und navigiere dann zu Einstellungen &gt; System &gt; Über
 
-Du kannst Python für Windows von der Webseite [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/) herunterladen. Klicke auf den "Latest Python 3 Release - Python x.x.x" Link. Wenn du eine **64-bit**-Version von Windows benutzt, lade die Datei **Windows x86-64 executable installer** herunter. Andernfalls lade den **Windows x86 executable installer** herunter. Führe den Installer nach dem Download \(per Doppelklick\) aus und folge den Anweisungen des Installationsprogramms.
+Du kannst Python für Windows von der Webseite [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)herunterladen. Klicke auf den "Latest Python 3 Release - Python x.x.x" Link. Wenn du eine **64-bit**-Version von Windows benutzt, lade die Datei **Windows x86-64 executable installer** herunter. Andernfalls lade den **Windows x86 executable installer** herunter. Führe den Installer nach dem Download \(per Doppelklick\) aus und folge den Anweisungen des Installationsprogramms.
 
 Auf eine Sache solltest du achten: Während der Installation wird ein Setup-Fenster auftauchen. Stell sicher, dass du die Checkbox mit "Add Python 3.6 to PATH" oder "Add Python to your environment variables" aktiviert hast und klicke dann auf "Install Now" wie hier gezeigt \(es kann bei dir etwas anders aussehen, wenn du eine andere Version installierst\):
 
-[![Vergiss nicht, Python zum Pfad hinzuzuf&#xFC;gen](https://github.com/hannesrothe/tutorial/raw/master/de/python_installation/images/python-installation-options.png)](https://github.com/hannesrothe/tutorial/blob/master/de/python_installation/images/python-installation-options.png)
+![Vergiss nicht, Python zum Pfad hinzuzuf&#xFC;gen](https://tutorial.djangogirls.org/de/python_installation/images/python-installation-options.png)
 
 Wenn die Installation abgeschlossen ist, siehst du vielleicht ein Dialogfeld mit einem Link, wo du mehr über Python oder über die Version lernen kannst. Schließe es oder brich den Dialog ab -- du wirst darüber mehr in diesem Tutorial lernen!
 
@@ -41,7 +43,9 @@ Hinweis: Falls du eine ältere Version von Windows verwendest \(7, Vista oder ä
 
 Wenn du eine ältere Version von Python installierst, kann es sein, dass die Installationsanzeige etwas anders aussieht als oben gezeigt. Stell sicher, dass du nach unten scrollst bis du "Add python.exe to Path" siehst, klicke den Button und wähle "Will be installed on local hard drive":
 
-[![Python zum Pfad hinzuf&#xFC;gen \(Installer von &#xE4;lterer Python-Version\)](https://github.com/hannesrothe/tutorial/raw/master/de/python_installation/images/add_python_to_windows_path.png)](https://github.com/hannesrothe/tutorial/blob/master/de/python_installation/images/add_python_to_windows_path.png)
+![Python zum Pfad hinzuf&#xFC;gen \(Installer von &#xE4;lterer Python-Version\)](https://tutorial.djangogirls.org/de/python_installation/images/add_python_to_windows_path.png)\*\*\*\*
+
+### **Install Python: OS X**
 
 > **Hinweis** Bevor du Python auf Mac OS X installierst, musst du sicherstellen, dass deine Mac-Einstellungen es erlauben, Pakete zu installieren, die nicht aus dem App Store stammen. Geh auf Systemeinstellungen \(im Ordner "Programme"\), klicke auf "Sicherheit", und dann auf die Registerkarte "Allgemein". Wenn "Apps-Download erlauben von:" auf "Mac App Store" gestellt ist, ändere die Einstellung auf "Mac App Store und verifizierte Entwickler".
 
@@ -50,28 +54,32 @@ Auf der Website [https://www.python.org/downloads/release/python-361/](https://w
 * Lade die Datei _Mac OS X 64-bit/32-bit installer_ herunter,
 * Doppelklicke auf _python-3.6.1-macosx10.6.pkg_, um die Installation zu starten.
 
+### **Install Python: Linux**
+
 Es ist ziemlich wahrscheinlich, dass du Python schon automatisch installiert hast. Um herauszufinden, ob das so ist \(und wenn ja, welche Version du hast\), öffne eine Konsole und gib das folgende Kommando ein:
 
-{% filename %}command-line{% endfilename %}
+command-line
 
 ```text
 $ python3 --version
 Python 3.6.1
 ```
 
-Wenn du eine andere 'Mikroversion' von Python installiert hast, z.B. 3.6.0, dann musst du die Version nicht aktualisieren. Wenn Python bei dir nicht installiert ist, oder du eine neuere Version willst, kannst du das folgendermaßen tun:
+Wenn du eine andere 'Mikroversion' von Python installiert hast, z.B. 3.6.0, dann musst du die Version nicht aktualisieren. Wenn Python bei dir nicht installiert ist, oder du eine neuere Version willst, kannst du das folgendermaßen tun:**Install Python: Debian or Ubuntu**
 
 Gib diesen Befehl in die Konsole ein:
 
-{% filename %}command-line{% endfilename %}
+command-line
 
 ```text
 $ sudo apt install python3
 ```
 
+### **Install Python: Fedora**
+
 Gib diesen Befehl in die Konsole ein:
 
-{% filename %}command-line{% endfilename %}
+command-line
 
 ```text
 $ sudo dnf install python3
@@ -79,9 +87,11 @@ $ sudo dnf install python3
 
 Auf älteren Fedora-Versionen kann es sein, dass du eine Fehlermeldung bekommst, dass das Kommando `dnf` nicht gefunden wird. Falls das passiert, musst du stattdessen `yum` verwenden.
 
+### **Install Python: openSUSE**
+
 Gib diesen Befehl in die Konsole ein:
 
-{% filename %}command-line{% endfilename %}
+command-line
 
 ```text
 $ sudo zypper install python3
@@ -89,7 +99,7 @@ $ sudo zypper install python3
 
 Prüfe, ob die Installation erfolgreich war, indem du ein Kommandozeilenfenster öffnest und den `python3`-Befehl ausführst:
 
-{% filename %}command-line{% endfilename %}
+command-line
 
 ```text
 $ python3 --version
