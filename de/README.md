@@ -24,10 +24,6 @@ Wenn du mit dem Tutorial fertig bist, hast du eine einfache, aber funktionierend
 
 Es wird \(in etwa\) so aussehen:
 
-> Dieses Werk ist unter der Creative Commons Attribution-ShareAlike 4.0 International License lizensiert. Eine Kopie dieser Lizenz finden Sie auf [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/)
->
-> Es ist eine angepasste Version des Django Girls Tutorials \([https://tutorial.djangogirls.org/de/](https://tutorial.djangogirls.org/de/)\)
-
 ![Abbildung 0.1](.gitbook/assets/application.png)
 
 Okay, [lass uns ganz am Anfang starten...](how_the_internet_works.md)
@@ -38,7 +34,7 @@ Okay, [lass uns ganz am Anfang starten...](how_the_internet_works.md)
 
 Dieses Tutorial wurde ursprünglich von [DjangoGirls](https://djangogirls.org/) erstellt. Solltest du Fehler finden oder das Tutorial aktualisieren wollen, dann folge den [Richtlinien zum Mitarbeiten](https://github.com/DjangoGirls/tutorial/blob/master/CONTRIBUTING.md).
 
-Zur Zeit haben wir die Übersetzungen auf der crowdin.com Plattform:
-
-[https://crowdin.com/project/django-girls-tutorial](https://crowdin.com/project/django-girls-tutorial)
+> Dieses Werk ist unter der Creative Commons Attribution-ShareAlike 4.0 International License lizensiert. Eine Kopie dieser Lizenz finden Sie auf [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/)
+>
+> Es ist eine angepasste Version des Django Girls Tutorials \([https://tutorial.djangogirls.org/de/](https://tutorial.djangogirls.org/de/)\).
 
