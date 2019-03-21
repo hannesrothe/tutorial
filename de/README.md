@@ -1,6 +1,6 @@
 # W1 Einleitung
 
-![Systementwicklung 101](.gitbook/assets/logo_systementwicklung_deh.jpg)
+![Systementwicklung Einf&#xFC;hrung @FUB](.gitbook/assets/logo_systementwicklung_deh.jpg)
 
 ## Willkommen
 
