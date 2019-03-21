@@ -1,14 +1,12 @@
-# Django Girls Tutorial
+# W1 Einleitung
 
-[![Gitter](https://badges.gitter.im/DjangoGirls/tutorial.svg)](https://gitter.im/DjangoGirls/tutorial)
-
-> Dieses Werk ist unter der Creative Commons Attribution-ShareAlike 4.0 International License lizensiert. Eine Kopie dieser Lizenz finden Sie auf http://creativecommons.org/licenses/by-sa/4.0/
+![Systementwicklung 101](.gitbook/assets/logo_systementwicklung_deh.jpg)
 
 ## Willkommen
 
-Willkommen beim Django Girls Tutorial! Wir freuen uns, dass du hier bist :) In diesem Tutorial schauen wir gemeinsam unter die Haube der Technologien im Internet, geben dir einen Einblick in die Bits und Bytes, die zusammen das Internet bilden, wie wir es heute kennen.
+Willkommen beim Python Tutorial zum Kurs Systementwicklung! Wir freuen uns, dass du hier bist :\) In diesem Tutorial schauen wir gemeinsam unter die Haube der Technologien im Internet, geben dir einen Einblick in die Bits und Bytes, die zusammen das Internet bilden, wie wir es heute kennen.
 
-Wie alles Unbekannte wird das ein Abenteuer sein - aber keine Sorge: Da du bereits den Mut aufgebracht hast, hier zu sein, wirst du das schon meistern :)
+Wie alles Unbekannte wird das ein Abenteuer sein - aber keine Sorge: Da du bereits den Mut aufgebracht hast, hier zu sein, wirst du das schon meistern :\)
 
 ## Einleitung
 
@@ -24,28 +22,23 @@ Wir hoffen, dass du danach diese Technik und Technologien so sehr mögen wirst w
 
 Wenn du mit dem Tutorial fertig bist, hast du eine einfache, aber funktionierende Webanwendung: deinen eigenen Blog. Wir zeigen dir, wie man ihn online stellt, andere können dein Werk also sehen!
 
-Es wird (in etwa) so aussehen:
+Es wird \(in etwa\) so aussehen:
 
-![Abbildung 0.1](images/application.png)
+> Dieses Werk ist unter der Creative Commons Attribution-ShareAlike 4.0 International License lizensiert. Eine Kopie dieser Lizenz finden Sie auf [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/)
+>
+> Es ist eine angepasste Version des Django Girls Tutorials \([https://tutorial.djangogirls.org/de/](https://tutorial.djangogirls.org/de/)\)
 
-> Wenn du allein mit diesem Tutorial arbeitest und keinen Coach in der Nähe hast, kannst du in diesem Chat nachfragen, wenn du ein Problem hast: [![Gitter](https://badges.gitter.im/DjangoGirls/tutorial.svg)](https://gitter.im/DjangoGirls/tutorial). Wir haben unsere Coaches und frühere Teilnehmer unserer Workshops gebeten, hin und wieder dort vorbei zu schauen und anderen mit dem Tutorial zu helfen! Hab keine Angst, dort deine Fragen zu stellen!
+![Abbildung 0.1](.gitbook/assets/application.png)
 
-Okay, [lass uns ganz am Anfang starten...](./how_the_internet_works/README.md)
+Okay, [lass uns ganz am Anfang starten...](how_the_internet_works.md)
 
-## Das Tutorial daheim durcharbeiten
+> Wenn du mit diesem Tutorial arbeitest und Fragen entstehen, bespreche sie in deinem Team oder sprich mit deinen Coaches. Hab keine Angst, Fragen zu stellen!
 
-An einem Django-Girls-Workshop teilzunehmen ist toll, aber uns ist klar, dass das nicht immer allen möglich ist. Darum wollen wir dich ermutigen, das Tutorial auch zu Hause zu erarbeiten. Für Leser zu Hause erstellen wir gerade Video-Tutorials, die es erleichtern sollen, diesem Tutorial zu folgen. Diese Arbeit ist noch nicht abgeschlossen, aber mehr und mehr Themen werden als Video erfasst und können im [Coding is for girls](https://www.youtube.com/channel/UC0hNd2uW8jTR5K3KBzRuG2A/feed)-YouTube-Kanal angesehen werden.
+## Über DjangoGirls und wie du mithelfen kannst
 
-In jedem Kapitel, das bereits mit Video unterstützt wird, gibt es einen Link auf das jeweilige Video dazu.
-
-## Über uns und wie du mithelfen kannst
-
-Dieses Tutorial wird von [DjangoGirls](https://djangogirls.org/) betreut. Solltest du Fehler finden oder das Tutorial aktualisieren wollen, dann folge den [Richtlinien zum Mitarbeiten](https://github.com/DjangoGirls/tutorial/blob/master/CONTRIBUTING.md).
-
-## Möchtest du uns helfen, das Tutorial in andere Sprachen zu übersetzen?
+Dieses Tutorial wurde ursprünglich von [DjangoGirls](https://djangogirls.org/) erstellt. Solltest du Fehler finden oder das Tutorial aktualisieren wollen, dann folge den [Richtlinien zum Mitarbeiten](https://github.com/DjangoGirls/tutorial/blob/master/CONTRIBUTING.md).
 
 Zur Zeit haben wir die Übersetzungen auf der crowdin.com Plattform:
 
-https://crowdin.com/project/django-girls-tutorial
+[https://crowdin.com/project/django-girls-tutorial](https://crowdin.com/project/django-girls-tutorial)
 
-Sollte deine Sprache nicht aufgeführt sein, dann öffne ein neues [Issue](https://github.com/DjangoGirls/tutorial/issues/new), mit der betreffenden Sprache, dann können wir sie hinzufügen.
