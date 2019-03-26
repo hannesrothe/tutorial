@@ -8,19 +8,27 @@ Okay, und wie machen wir das jetzt?
 
 Wir öffnen unsere Datei `blog/views.py` in unserem Code-Editor. Bisher sieht unsere `post_list`-_View_ folgendermaßen aus:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 from django.shortcuts import render
 
 def post_list(request):
     return render(request, 'blog/post_list.html', {})
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Erinnerst du dich, als wir davon gesprochen haben, dass wir den Code in verschiedene Dateien einfügen müssen? Jetzt ist es an der Zeit, das Model, dass wir in `models.py` beschrieben haben, einzufügen. Wir fügen den Befehl `from .models import Post` folgendermaßen ein:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 from django.shortcuts import render
 from .models import Post
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Der Punkt vor `models` bedeutet _aktuelles Verzeichnis_ oder _aktuelle Anwendung_. Die Dateien `views.py` und `models.py` liegen im selben Verzeichnis. Deswegen können wir `.` und den Namen der Datei \(ohne `.py`\) benutzen. Dann ergänzen wir für den Import den Namen des Models \(`Post`\).
 
@@ -32,12 +40,18 @@ Dir sollte schon ungefähr klar sein, wie QuerySets funktionieren. Wir haben dar
 
 Wir wollen nun also eine Liste von publizierten Blogposts ausgeben, sortiert nach dem `published_date`, oder? Das haben wir bereits im Kapitel QuerySets gemacht!
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Öffnen wir also die Datei `blog/views.py` im Code-Editor und setzen wir dieses Stück Code in die Funktion `def post_list(request)` ein. Aber vergiss nicht, zuerst `from django.utils import timezone` hinzufügen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 from django.shortcuts import render
 from django.utils import timezone
@@ -47,6 +61,8 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {})
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Als Letztes fehlt noch, dass wir das `posts`-QuerySet dem Template übergeben. Wie wir es dann anzeigen, erfährst du im nächsten Kapitel.
 
@@ -56,6 +72,8 @@ In der `render`-Funktion haben wir einen Parameter `request` \(also alles, was w
 
 Schließlich sollte deine `blog/views.py` Datei folgendermaßen aussehen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 from django.shortcuts import render
 from django.utils import timezone
@@ -65,6 +83,8 @@ def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Das war's! Zeit, zurück zum Template zu gehen und das QuerySet anzuzeigen!
 

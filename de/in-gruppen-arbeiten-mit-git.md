@@ -1,8 +1,8 @@
 # W5 In Gruppen arbeiten mit Git
 
-## Veröffentlichen!
+## Deine Arbeit mit der Gruppe teilen!
 
-Bis jetzt war deine Webseite nur auf deinem Computer verfügbar. Jetzt wirst du lernen wie du sie teilst. Dafür verwenden wir einen externen Dienst: [GitHub](https://www.github.com). Github ist ein "Code Hosting"-Dienst. Es gibt noch andere solcher Dienste, aber die meisten Programmierer haben heute ein Konto bei GitHub. Deshalb verwenden wir es auch.
+Bis jetzt war deine Webseite nur auf deinem Computer verfügbar und du hast alleine für dich gearbeitet. Jetzt wirst du lernen wie du sie teilst. Dafür verwenden wir einen externen Dienst: [GitHub](https://www.github.com). Github ist ein "Code Hosting"-Dienst. Es gibt noch andere solcher Dienste, aber die meisten Programmierer haben heute ein Konto bei GitHub. Deshalb verwenden wir es auch.
 
 Nach Einrichtung von Git werden zwei Orte für dich wichtig sein. Die Entwicklung und das Testen wirst du auf deinem lokalen Rechner durchführen. Wenn du mit deinen Änderungen zufrieden bist, wirst du eine Kopie deines Programms auf GitHub veröffentlichen.
 
@@ -26,27 +26,33 @@ Lade Git von [git-scm.com](https://git-scm.com/) herunter und folge dann den Anw
 
 #### **Installing Git: Debian or Ubuntu**
 
-command-line
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ sudo apt install git
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 #### **Installing Git: Fedora**
 
-command-line
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ sudo dnf install git
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 #### **Installing Git: openSUSE**
 
-command-line
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ sudo zypper install git
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### Unser Git-Repository
 
@@ -54,12 +60,16 @@ Git verwaltet die Veränderungen an einer Sammlung von Dateien in einem sogenann
 
 > **Hinweis:** Überprüfe dein aktuelles Arbeitsverzeichnis mit dem Befehl `pwd` \(OSX/Linux\) oder `cd` \(Windows\) bevor du das Repository initialisierst. Du musst dich im `djangogirls`-Verzeichnis befinden, bevor du fortfährst.
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git init
 Initialized empty Git repository in ~/djangogirls/.git/
 $ git config --global user.name "Dein Name"
 $ git config --global user.email du@example.com
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Die Initialisierung des Git-Repositorys müssen wir für jedes Projekt nur einmal machen \(danach musst Du Benutzernamen und Mail-Adresse nie wieder eingeben\).
 
@@ -75,7 +85,7 @@ db.sqlite3
 .DS_Store
 ```
 
-Speichere die Datei mit dem Namen `.gitignore` im "djangogirls"-Root-Verzeichnis.
+Speichere die Datei mit dem Namen `.gitignore` im "djangogirls"-Root-Verzeichnis. `.gitignore` definiert, welche Dateien nicht geteilt werden sollen, z.B. weil sie persönliche Informationen enthalten oder sie nicht projektspezifisch sind.
 
 > **Hinweis:** Der Punkt vor dem Dateinamen ist wichtig! Wenn du Schwierigkeiten beim Erstellen hast \(z.B. lassen Macs im Finder keine Dateien mit Punkt am Anfang erzeugen, Punkt-Dateien sind auf Linux und OS X "versteckte Dateien"\), dann verwende die "Speichern unter"-Funktion im Editor, das sollte immer funktionieren. Wichtig ist, dass du den Dateinamen nicht mit `.txt`, `.py` oder einer anderen Dateinamen-Erweiterung ergänzt -- die Datei wird von Git nur erkannt, wenn ihr Name exakt nur `.gitignore` ist.
 >
@@ -83,6 +93,8 @@ Speichere die Datei mit dem Namen `.gitignore` im "djangogirls"-Root-Verzeichnis
 
 Es ist hilfreich den Befehl `git status` vor `git add` auszuführen oder immer dann, wenn du dir unsicher bist, was geändert wurde. Das schützt vor manchen Überraschungen, wie z. B. das falsche Hinzufügen oder Übertragen von Dateien. Das `git status`-Kommando gibt Informationen über unbeobachtete/veränderte/hinzugefügte Dateien, den Status der Verzweigung und einiges mehr wieder. Deine Ausgabe sollte dem hier ähneln:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git status
 On branch master
@@ -100,9 +112,13 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Nun speichern wir unsere Änderungen durch folgende Eingabe in der Konsole:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git add --all .
 $ git commit -m "My Django Girls app, first commit"
@@ -112,6 +128,8 @@ $ git commit -m "My Django Girls app, first commit"
  [...]
  create mode 100644 mysite/wsgi.py
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### Den Code auf GitHub veröffentlichen
 
@@ -131,10 +149,14 @@ Nun müssen wir das Git-Repository auf deinem Computer mit dem auf GitHub verbin
 
 Gib das Folgende auf der Kommandozeile ein \(ersetzte `<your-github-username>` mit dem Benutzernamen, den du beim Erstellen deines GitHub-Accounts gewählt hast, aber ohne die spitzen Klammern -- die URL sollte der clone-URL entsprechen, die du vorhin gerade gesehen hast\):
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git remote add origin https://github.com/<your-github-username>/my-first-blog.git
 $ git push -u origin master
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wenn du zu GitHub pushst, wirst du nach deinem Benutzernamen und Passwort gefragt \(entweder direkt im Kommandozeilen-Fenster oder in einem Pop-Up-Fenster\), und nach der Eingabe deiner Zugangsdaten solltest du etwas Ähnliches wie das hier sehen:
 

@@ -12,25 +12,39 @@ Die Namen einiger Dateien und Verzeichnisse sind sehr wichtig für Django. Die D
 
 > Denk daran, alles in der "Virtualenv"-Umgebung auszuführen. Wenn du kein Präfix `(myvenv)` in deiner Konsole siehst, musst du deine Virtualenv-Umgebung aktivieren. Wie das gemacht wird, erklären wir im Kapitel **Django-Installation**, im Abschnitt **Arbeiten mit Virtualenv**. Zur Erinnerung: Gib dazu auf Windows `myvenv\Scripts\activate` ein, bzw. auf OS X oder Linux `source myvenv/bin/activate`.
 
+#### Linux oder OS X
+
 In deiner OS X- oder Linux-Konsole solltest du den folgenden Befehl ausführen; **vergiss den Punkt \(**`.`**\) am Ende nicht!**
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ django-admin startproject mysite .
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 > Der Punkt `.` ist sehr wichtig, weil er dem Skript mitteilt, dass Django in deinem aktuellen Verzeichnis installiert werden soll. \(Der Punkt `.` ist eine Schnellreferenz dafür.\)
 >
 > **Hinweis:** Wenn du das oben angegebene Kommando eingibst, denk daran, nur das einzutippen, was mit `django-admin` anfängt. Der `(myvenv) ~/djangogirls$`-Teil hier ist nur ein Beispiel für die Eingabeaufforderung \(den "Prompt"\) auf der Kommandozeile.
 
+#### Windows
+
 Auf Windows solltest du den folgenden Befehl ausführen. **\(Vergiss den Punkt \(**`.`**\) am Ende nicht!\)**:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 (myvenv) C:\Users\Name\djangogirls> django-admin.exe startproject mysite .
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 > Der Punkt `.` ist sehr wichtig, weil er dem Skript mitteilt, dass Django in deinem aktuellen Verzeichnis installiert werden soll. \(Der Punkt `.` ist eine Schnellreferenz dafür.\)
 >
 > **Hinweis:** Wenn du das oben angegebene Kommando eingibst, denk daran, nur das einzutippen, was mit `django-admin.exe` anfängt. Der `(myvenv) C:\Users\Name\djangogirls>`-Teil hier ist nur ein Beispiel für die Eingabeaufforderung \(den "Prompt"\) auf der Kommandozeile.
+
+### Dein Django Ordner
 
 `django-admin.py` ist ein Skript, welches Verzeichnisse und Dateien für dich erstellt. Du solltest jetzt eine Verzeichnisstruktur haben, die folgendermaßen aussieht:
 
@@ -65,30 +79,48 @@ Es wäre schön, wenn die richtige Zeit auf deiner Webseite eingestellt ist. Geh
 
 Suche in `settings.py` die Zeile, die `TIME_ZONE` enthält und ändere sie ab, um deine eigene Zeitzone auszuwählen. Zum Beispiel:
 
+{% code-tabs %}
+{% code-tabs-item title="In settings.py" %}
 ```python
 TIME_ZONE = 'Europe/Berlin'
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Ein Sprachkennung besteht aus einem Kürzel für die Sprache, z.B. `en` für Englisch oder `de` für Deutsch, und einem Länder-Kürzel z.B. `de` für Deutschland oder `ch` für die Schweiz. Falls Englisch nicht deine Muttersprache ist, kannst du damit die Standard-Knöpfe und -Meldungen von Django auf deine Sprache wechseln. Der "Cancel"-Knopf würde dann in diese Sprache übersetzt \(und z.B. bei Deutsch mit "Abbrechen" beschriftet\). [Django enthält viele fix-fertige Übsersetzungen](https://docs.djangoproject.com/en/2.0/ref/settings/#language-code).
 
 Wenn du eine andere Sprache als Englisch willst, ändere die Sprachkennung, indem du die folgende Zeile änderst:
 
+{% code-tabs %}
+{% code-tabs-item title="In settings.py" %}
 ```python
 LANGUAGE_CODE = 'de-ch'
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Ausserdem müssen wir einen Pfad für statische Dateien festlegen. \(Über statische Dateien und CSS lernst du später in diesem Tutorial etwas.\) Geh hinunter zum _Ende_ der Datei und füge direkt unter dem `STATIC_URL`-Eintrag einen neuen Eintrag namens `STATIC_ROOT` ein:
 
+{% code-tabs %}
+{% code-tabs-item title="In settings.py" %}
 ```python
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-Wenn `DEBUG` auf `True` gesetzt ist und `ALLOWED_HOSTS` leer, dann wird der "Host" gegen `['localhost', '127.0.0.1', '[::1]']` validiert. Unser Hostname auf PythonAnywhere, wo wir unsere Anwendung deployen werden, würde da nicht passen. Deswegen ändern wir folgende Einstellung:
+> Wenn `DEBUG` auf `True` gesetzt ist und `ALLOWED_HOSTS` leer, dann wird der "Host" gegen `['localhost', '127.0.0.1', '[::1]']` validiert. Eventuell möchtest du dein Projekt ganz zum Schluss im Web veröffentlichen. Damit wir dafür schon einmal vorsorgen, erlauben wir auch den Hostnamen PythonAnywhere. Dort wirst du ganz zum Schluss des Kurses lernen, wie man Projekte "deployed". Deswegen suche nach der Zeile ALLOWED\_HOSTS = \[\] und ändere die Einstellung wie folgt:
+>
+> {% code-tabs %}
+> {% code-tabs-item title="In settings.py" %}
+> ```python
+> ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+> ```
+> {% endcode-tabs-item %}
+> {% endcode-tabs %}
 
-```python
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
-```
+
 
 > **Hinweis**: Wenn du ein Chromebook verwendest, füge noch diese Zeile am Ende deiner settings.py-Datei hinzu: `MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'`
 >
@@ -96,10 +128,12 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 ## Eine Datenbank erstellen
 
-Es gibt viele verschiedene Datenbank Programme, welche die Daten unserer Website verwalten können. Wir werden die Standard-Datenbanksoftware nehmen, `sqlite3`.
+Es gibt viele verschiedene Datenbank Programme, welche die Daten unserer Website verwalten können \(ggf. kennt ihr bereits MS SQL oder MySQL\). Wir werden eine leichtgewichtige  Standard-Datenbanksoftware nehmen, `sqlite3`.
 
 Das sollte schon in der `mysite/settings.py`-Datei eingestellt sein:
 
+{% code-tabs %}
+{% code-tabs-item title="In settings.py" %}
 ```python
 DATABASES = {
     'default': {
@@ -108,9 +142,13 @@ DATABASES = {
     }
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Um eine Datenbank für unseren Blog zu erstellen, müssen wir folgenden Befehl in der Konsole ausführen \(Dazu müssen wir in dem `djangogirls`-Verzeichnis sein, in dem sich auch die `manage.py`-Datei befindet\). Wenn alles glatt läuft, sollte das so aussehen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py migrate
 Operations to perform:
@@ -132,6 +170,8 @@ Running migrations:
   Applying auth.0009_alter_user_last_name_max_length... OK
   Applying sessions.0001_initial... OK
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Und wir sind fertig! Zeit, unseren Webserver zu starten, um zu sehen, ob unsere Website funktioniert!
 
@@ -139,27 +179,43 @@ Und wir sind fertig! Zeit, unseren Webserver zu starten, um zu sehen, ob unsere 
 
 Kontrolliere, dass du in dem Verzeichnis bist, in dem die `manage.py`-Datei liegt \(das `djangogirls`-Verzeichnis\). Wir starten den Webserver, indem wir in der Konsole `python manage.py runserver` ausführen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py runserver
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wenn du ein Chromebook verwendest, benutze stattdessen diesen Befehl:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py runserver 0.0.0.0:8080
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
-Wenn du Windows benutzt und dies mit dem `UnicodeDecodeError` fehlschläft, verwende diesen Befehl:
+Wenn du Windows benutzt und dies mit dem `UnicodeDecodeError` fehlschlägt, verwende diesen Befehl:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py runserver 0:8000
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Jetzt wollen wir schauen, ob unsere Website funktioniert: Öffne deinen Browser \(Firefox, Chrome, Safari, Edge oder was du sonst nutzt\) und gib diese Adresse ein:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 http://127.0.0.1:8000/
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wenn du ein Chromebook und Cloud9 verwendest, dann klicke stattdessen die URL im erschienenen Fenster in der oberen rechten Ecke des Kommandozeilenfensters, in dem der Webserver läuft. Die URL sollte etwa so aussehen:
 

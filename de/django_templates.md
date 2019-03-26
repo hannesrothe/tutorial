@@ -14,9 +14,13 @@ Im vorangegangen Kapitel haben wir unserem Template in der `posts`-Variable eine
 
 Um eine Variable in einem Django-Template darzustellen, nutzen wir doppelte, geschweifte Klammern mit dem Namen der Variable darin, so wie hier:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 {{ posts }}
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Versuche das in deinem `blog/templates/blog/post_list.html` Template. Öffne es in deinem Code-Editor und ersetze alles vom zweiten `<div>` bis zum dritten `</div>` mit `{{ posts }}`. Speichere die Datei und aktualisiere die Seite, um die Ergebnisse anzuzeigen.
 
@@ -30,11 +34,15 @@ Wie du siehst, haben wir nun das:
 
 Das heißt, Django versteht es als Liste von Objekten. Kannst du dich noch an die Einführung von Python erinnern, wie man Listen anzeigen kann? Ja, mit for-Schleifen! In einem Django-Template benutzt du sie so:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% for post in posts %}
     {{ post }}
 {% endfor %}
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Versuch das in deinem Template.
 
@@ -42,6 +50,8 @@ Versuch das in deinem Template.
 
 Es funktioniert! Aber wir wollen, dass die Posts so wie die statischen Posts angezeigt werden, die wir vorhin im **Einführung in HTML**-Kapitel erstellt haben. Du kannst HTML und Template Tags mischen. Unser `body` sollte dann so aussehen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 <div>
     <h1><a href="/">Django Girls Blog</a></h1>
@@ -55,6 +65,8 @@ Es funktioniert! Aber wir wollen, dass die Posts so wie die statischen Posts ang
     </div>
 {% endfor %}
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ![Abbildung 13.3](.gitbook/assets/step3.png)
 

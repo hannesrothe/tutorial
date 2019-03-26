@@ -17,9 +17,10 @@ blog
 
 So, jetzt lass uns diese im Code-Editor öffnen und folgenden Code hinzufügen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/forms.py" %}
 ```python
 from django import forms
-
 from .models import Post
 
 class PostForm(forms.ModelForm):
@@ -28,6 +29,8 @@ class PostForm(forms.ModelForm):
          model = Post
          fields = ('title', 'text',)
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Zuerst müssen wir die Django-Forms importieren \(`from django import forms`\) und auch unser `Post`-Model \(`from .models import Post`\).
 
@@ -45,9 +48,13 @@ Also erstellen wir hier auch wieder einen Link auf die Seite, eine URL, eine Vie
 
 Jetzt ist es an der Zeit, `blog/templates/blog/base.html` im Code-Editor zu öffnen. Wir fügen einen Link in `div` hinzu mit dem Namen `page-header`:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/base.html" %}
 ```markup
 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Beachte, dass wir unsere neue View `post_new` nennen wollen. Die Klasse `"glyphicon glyphicon-plus"` wird durch das verwendete Bootstrap-Theme zur Verfügung gestellt und wird ein Pluszeichen anzeigen.
 
@@ -86,12 +93,18 @@ Nach dem Speichern und Neuladen von [http://127.0.0.1:8000](http://127.0.0.1:800
 
 Wir öffnen `blog/urls.py` im Code-Editor und fügen eine Zeile hinzu:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/urls.py" %}
 ```python
 path('post/new/', views.post_new, name='post_new'),
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Der finale Code sieht dann so aus:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/urls.py" %}
 ```python
 from django.urls import path 
 from . import views 
@@ -101,6 +114,8 @@ urlpatterns = [
     path('post/new/', views.post_new, name='post_new'), 
 ]
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Nach dem Neuladen der Site sehen wir einen `AttributeError`, weil wir noch keine `post_new`-View eingefügt haben. Fügen wir sie gleich hinzu!
 
@@ -108,17 +123,25 @@ Nach dem Neuladen der Site sehen wir einen `AttributeError`, weil wir noch keine
 
 Jetzt wird es Zeit, die Datei `blog/views.py` im Code-Editor zu öffnen und die folgenden Zeilen zu den anderen `from` Zeilen hinzuzufügen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 from .forms import PostForm
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Und dann unsere _View_:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 def post_new(request):
     form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Um ein neues `PostForm` zu erstellen, rufen wir `PostForm()` auf und übergeben es an das Template. Wir kommen gleich nochmal zu dem _View_ zurück, aber jetzt erstellen wir schnell ein Template für das Form.
 
@@ -135,6 +158,8 @@ Wir müssen eine Datei `post_edit.html` im Verzeichnis `blog/templates/blog` ers
 
 Ok, also schauen wir mal, wie der HTML-Code in `post_edit.html` aussehen sollte:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_edit.html" %}
 ```markup
 {% extends 'blog/base.html' %}
 
@@ -146,6 +171,8 @@ Ok, also schauen wir mal, wie der HTML-Code in `post_edit.html` aussehen sollte:
     </form>
 {% endblock %}
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 So, jetzt aktualisieren wir die Seite! Yay! Das Formular wird angezeigt!
 
@@ -161,33 +188,47 @@ Die Antwort ist: nichts. Wir müssen einfach noch etwas mehr Arbeit in unsere _V
 
 Öffne `blog/views.py` erneut im Code-Editor. Derzeit ist alles, was wir in der View `post_new` haben, das hier:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 def post_new(request):
     form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wenn wir das Formular übermitteln, werden wir zur selben Ansicht weitergeleitet, aber dieses Mal haben wir mehr Daten in `request`, genauer in `request.POST` \(der Name hat nichts zu tun mit einem "Blogpost", sondern damit, dass wir Daten "posten"\). Erinnerst du dich daran, dass in der HTML-Datei unsere `<form>` Definition die Variable `method="POST"` hatte? Alle Felder aus dem Formular sind jetzt in `request.POST`. Du solltest `POST` nicht umbenennen \(der einzige andere gültige Wert für `method` ist `GET`, wir wollen hier jetzt aber nicht auf den Unterschied eingehen\).
 
 Somit müssen wir uns in unserer _View_ mit zwei verschiedenen Situationen befassen: erstens, wenn wir das erste Mal auf die Seite zugreifen und ein leeres Formular wollen und zweitens, wenn wir zur _View_ mit allen soeben ausgefüllten Formular-Daten zurück wollen. Wir müssen also eine Bedingung hinzufügen \(dafür verwenden wir `if`\):
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 if request.method == "POST":
     [...]
 else:
     form = PostForm()
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Es wird Zeit, die Lücken zu füllen `[...]`. Falls die `Methode` `POST` ist, wollen wir das `PostForm` mit Daten vom Formular erstellen. Oder? Das machen wir folgendermaßen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 form = PostForm(request.POST)
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Als Nächstes müssen wir testen, ob das Formular korrekt ist \(alle benötigten Felder sind ausgefüllt und keine ungültigen Werte werden gespeichert\). Wir tun das mit `form.is_valid()`.
 
 Wir überprüfen also, ob das Formular gültig ist und wenn ja, können wir es speichern!
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 if form.is_valid():
     post = form.save(commit=False)
@@ -195,25 +236,37 @@ if form.is_valid():
     post.published_date = timezone.now()
     post.save()
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Im Grunde passieren hier zwei Dinge: Wir speichern das Formular mit `form.save` und wir fügen einen Autor hinzu \(da es bislang kein `author` Feld in der `PostForm` gab und dieses Feld notwendig ist\). `commit=False` bedeutet, dass wir das `Post` Model noch nicht speichern wollen - wir wollen erst noch den Autor hinzufügen. Meistens wirst du `form.save()` ohne `commit=False` benutzen, aber in diesem Fall müssen wir es so tun. `post.save()` wird die Änderungen sichern \(den Autor hinzufügen\) und ein neuer Blogpost wurde erstellt!
 
 Wäre es nicht grossartig, wenn wir direkt zu der `post_detail` Seite des neu erzeugten Blogposts gehen könnten? Um dies zu tun, benötigen wir noch einen zusätzlichen Import:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 from django.shortcuts import redirect
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Füge dies direkt am Anfang der Datei hinzu. Jetzt können wir endlich sagen: "Gehe zu der `post_detail` Seite unseres neu erstellten Posts":
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 return redirect('post_detail', pk=post.pk)
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 `post_detail` ist der Name unserer View, zu der wir springen wollen. Erinnerst du dich, dass diese _View_ einen `pk` benötigt? Um diesen an die View weiterzugeben, benutzen wir `pk=post.pk`, wobei `post` unser neu erstellter Blogpost ist!
 
 Ok, wir haben jetzt eine ganze Menge geredet, aber du willst bestimmt sehen, wie die gesamte _View_ aussieht, richtig?
 
+{% code-tabs %}
+{% code-tabs-item title="blog/views.py" %}
 ```python
 def post_new(request):
     if request.method == "POST":
@@ -228,6 +281,8 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Schauen wir mal, ob es funktioniert. Gehe zur Seite [http://127.0.0.1:8000/post/new/](http://127.0.0.1:8000/post/new/), füge einen `title` und `text` hinzu und speichere es...voilà! Der neue Blogpost wird hinzugefügt und wir werden auf die `post_detail` Seite umgeleitet!
 

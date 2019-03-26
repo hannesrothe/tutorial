@@ -14,6 +14,8 @@ Jede Seite im Internet braucht ihre eigene URL. Dadurch weiß deine Applikation,
 
 Öffne die `mysite/urls.py`-Datei in deinem Code-Editor nach Wahl und schaue dir an, wie sie aussieht:
 
+{% code-tabs %}
+{% code-tabs-item title="mysite/urls.py" %}
 ```python
 """mysite URL Configuration
 
@@ -26,6 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wie du siehst, hat Django hier schon etwas für uns eingefügt.
 
@@ -33,9 +37,13 @@ Zeilen zwischen dreifachen Gänsefüßchen \(`'''` oder `"""`\) heißen Docstrin
 
 Die admin-URL, die du im vorangegangenen Kapitel bereits besucht hast, ist schon da:
 
+{% code-tabs %}
+{% code-tabs-item title="mysite/urls.py" %}
 ```python
     path('admin/', admin.site.urls),
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Diese Zeile bedeutet, dass Django für jede URL, die mit `admin/` beginnt, die entsprechende _View_ finden wird. Hier wird mit admin-site.urls eine ganze Sammlung von admin-URLs referenziert. Dadurch müssen nicht alle in dieser kleinen Datei aufgeführt werden und sie bleibt lesbarer und übersichtlicher.
 
@@ -49,6 +57,8 @@ Also los: Füge eine Zeile hinzu, die `blog.urls` importiert. Ausserdem wirst du
 
 Deine `mysite/urls.py`-Datei sollte jetzt so aussehen:
 
+{% code-tabs %}
+{% code-tabs-item title="mysite/urls.py" %}
 ```python
 from django.contrib import admin
 from django.urls import path, include
@@ -58,6 +68,8 @@ urlpatterns = [
     path('', include('blog.urls')),
 ]
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Django wird nun alle Aufrufe von '[http://127.0.0.1:8000/](http://127.0.0.1:8000/)' auf `blog.urls` umleiten und dort nach weiteren Anweisungen schauen.
 
@@ -65,20 +77,28 @@ Django wird nun alle Aufrufe von '[http://127.0.0.1:8000/](http://127.0.0.1:8000
 
 Erstelle eine neue leere Datei namens `urls.py` im Verzeichnis `blog` und öffne sie im Code-Editor. Alles klar! Füge folgende zwei Zeilen ein:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/urls.py" %}
 ```python
 from django.urls import path
 from . import views
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Hier importieren wir die Django-Funktion `path` und alle unsere `views` aus unserer `blog`-Applikation. \(Wir haben noch keine, aber dazu kommen wir gleich!\)
 
 Jetzt können wir unser erstes URL-Muster hinzufügen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/urls.py" %}
 ```python
 urlpatterns = [
     path('', views.post_list, name='post_list'),
 ]
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wie du siehst, fügen wir nun eine `view` mit dem Namen `post_list` zur Root-URL hinzu. Leere Zeichenfolgen passen auf dieses Muster und der Django-URL-Resolver ignoriert den Domain-Namen \(z.B. [http://127.0.0.1:8000/](http://127.0.0.1:8000/)\), der im vollständigen Pfad voransteht. Dieses Muster sagt Django also, dass `views.post_list` das gewünschte Ziel ist, wenn jemand deine Website über '[http://127.0.0.1:8000/](http://127.0.0.1:8000/)' aufruft.
 

@@ -18,10 +18,14 @@ Es wurde ursprünglich von ProgrammiererInnen bei Twitter geschrieben. Heute wir
 
 Öffne deine `.html`-Datei in deinem Code-Editor und füge Folgendes zum `<head>`-Abschnitt hinzu, um Bootstrap zu installieren:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Dadurch werden deinem Projekt keine Dateien hinzugefügt. Der Code verweist nur auf Dateien, die im Internet vorhanden sind. Öffne und aktualisiere also deine Webseite. Da ist sie!
 
@@ -70,11 +74,15 @@ Aber lass uns wenigstens etwas Kleines probieren. Beispielsweise könnten wir di
 
 In deiner `blog/static/css/blog.css` Datei änderst du den folgenden Code:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/static/css/blog.css" %}
 ```css
 h1 a, h2 a {
     color: #C25100;
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 `h1 a` ist ein CSS-Selektor. Das bedeutet, dass wir für ein `a`-Element innerhalb eines `h1`-Elements einen Style hinzufügen; der `h2 a`-Selektor macht das selbe für `h2`-Elemente. Wenn wir also etwas haben wie: `<h1><a href="">link</a></h1>` wird der `h1 a` Style angewandt. In diesem Fall sagen wir, dass die Farbe in `#C25100` geändert werden soll. Das ist ein dunkles Orange. Du kannst hier auch deine eigene Farbe verwenden, aber stelle sicher, dass sie einen guten Kontrast zum weißen Hintergrund hat!
 
@@ -88,20 +96,30 @@ In einer CSS-Datei werden Stile für Elemente der HTML-Datei festgelegt. Ein Weg
 
 Wir müssen der HTML-Vorlage noch sagen, dass wir CSS eingefügt haben. Öffne die Datei `blog/templates/blog/post_list.html` im Code-Editor und füge diese Zeile ganz oben ein:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% load static %}
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wir laden hier die statischen Dateien. :\) Füge zwischen den Tags `<head>` und `</head>`, direkt nach den Links zu den Bootstrap-Dateien, noch diese Zeile ein:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Der Browser liest die Dateien in der Reihenfolge, in der sie aufgeschrieben wurden. Darum müssen wir sicherstellen, dass die Zeile am richtigen Ort steht. Sonst könnte der Code der Bootstrap-Dateien den Code aus unserer Datei überschreiben. Wir haben also unserem Template gerade gesagt, wo sich die CSS-Datei befindet.
 
 Deine Datei sollte jetzt so aussehen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% load static %}
 <html>
@@ -126,6 +144,8 @@ Deine Datei sollte jetzt so aussehen:
     </body>
 </html>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 OK, speichere die Datei und lade die Seite neu!
 
@@ -133,11 +153,15 @@ OK, speichere die Datei und lade die Seite neu!
 
 Gut gemacht! Vielleicht wollen wir unserer Webseite etwas mehr Luft geben, indem wir den Abstand auf der linken Seite vergrößern? Probieren wir es aus!
 
+{% code-tabs %}
+{% code-tabs-item title="blog/static/css/blog.css" %}
 ```css
 body {
     padding-left: 15px;
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Füge dies zu deinem CSS hinzu, speichere die Datei und schau dir an, was passiert.
 
@@ -145,20 +169,28 @@ Füge dies zu deinem CSS hinzu, speichere die Datei und schau dir an, was passie
 
 Vielleicht können wir auch die Schrift in unserem HTML-Kopf anpassen? Füge dies zu `<head>` in `blog/templates/blog/post_list.html` hinzu:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wie eben bereits gemacht, prüfe die Reihenfolge und platziere die Anweisung vor dem Link `blog/static/css/blog.css`. Sie importiert eine Schriftart \(engl. "Font"\) namens _Lobster_ von Google Fonts \([https://www.google.com/fonts](https://www.google.com/fonts)\).
 
 Suche den Anweisungsblock: `h1 a` \(der Code zwischen den geschweiften Klammern `{` und `}`\) in der CSS Datei `blog/static/css/blog.css`. Nun füge die Zeile `font-family: 'Lobster';` zwischen den geschweiften Klammern hinzu und aktualisiere die Seite:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/static/css/blog.css" %}
 ```css
 h1 a, h2 a {
     color: #C25100;
     font-family: 'Lobster';
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ![Abbildung 14.3](.gitbook/assets/font.png)
 
@@ -168,14 +200,20 @@ Wie oben erwähnt, basiert CSS auf dem Konzept von Klassen. Diese erlauben dir, 
 
 Geben wir also einigen Teilen deines HTML-Codes solche Namen. Füge eine Klasse \(`class`\) namens `page-header` dem `div` hinzu, das die Kopfzeilen \(header\) enthalten soll:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 <div class="page-header">
     <h1><a href="/">Django Girls Blog</a></h1>
 </div>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Jetzt fügen wir dem `div` für den Blog-Inhalt \(Post\) noch eine Klasse `post` hinzu.
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 <div class="post">
     <p>published: {{ post.published_date }}</p>
@@ -183,9 +221,13 @@ Jetzt fügen wir dem `div` für den Blog-Inhalt \(Post\) noch eine Klasse `post`
     <p>{{ post.text|linebreaksbr }}</p>
 </div>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wir erweitern jetzt unser CSS mit entsprechenden Selektoren. Selektoren, die mit `.` anfangen, beziehen sich auf Klassen im HTML. Es gibt im Internet viele gute Tutorials und Informationen über CSS, die dir helfen können, den folgenden Code besser zu verstehen. Kopiere zunächst folgenden Text in deine `blog/static/css/blog.css`-Datei:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/static/css/blog.css" %}
 ```css
 .page-header {
     background-color: #C25100;
@@ -234,9 +276,13 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Der HTML-Code, der für die Anzeige der Blogposts verantwortlich ist, soll durch Klassen erweitert werden. Ersetze den folgenden Code:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% for post in posts %}
     <div class="post">
@@ -246,9 +292,13 @@ Der HTML-Code, der für die Anzeige der Blogposts verantwortlich ist, soll durch
     </div>
 {% endfor %}
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 in `blog/templates/blog/post_list.html` durch diesen:
 
+{% code-tabs %}
+{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
 ```markup
 <div class="content container">
     <div class="row">
@@ -266,6 +316,8 @@ in `blog/templates/blog/post_list.html` durch diesen:
     </div>
 </div>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Speichere die geänderten Dateien und aktualisiere die Webseite.
 

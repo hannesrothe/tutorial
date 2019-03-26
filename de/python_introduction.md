@@ -16,12 +16,31 @@ Also öffne die Konsole, dann fangen wir an.
 
 Wir wollen eine Python Konsole öffnen, also tippe unter Windows `python` oder im Mac OS/Linux Terminal `python3` und drücke `Enter`.
 
+#### **Windows**
+
+{% code-tabs %}
+{% code-tabs-item title="In der Kommandozeile" %}
+```text
+> python
+Python 3.6.1 (...)
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+#### Mac OS / Linux
+
+{% code-tabs %}
+{% code-tabs-item title="In der Kommandozeile" %}
 ```text
 $ python3
 Python 3.6.1 (...)
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### Dein erster Python-Befehl!
 
@@ -542,15 +561,23 @@ Nun, da die Datei gesichert ist, wollen wir sie ausführen! Nutze, was du bisher
 
 Auf einem Mac sieht das etwa so aus:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ cd ~/Desktop
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Unter Linux ist es ähnlich:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ cd ~/Desktop
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 \(Denk daran, dass das "Desktop"-Verzeichnis bei dir "Schreibtisch" heißen kann.\)
 
@@ -566,16 +593,24 @@ Wenn du nicht weiterkommst, frag' um Hilfe. Denn genau dafür sind die Coaches d
 
 Benutze jetzt Python, um den Code in der Datei auszuführen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py 
 Hello, Django girls!
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Hinweis: Unter Windows gibt es den 'python3'-Befehl nicht. Verwende stattdessen 'python', um die Datei auszuführen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```python
 > python python_intro.py
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Prima! Du hast soeben dein erstes Python-Programm aus einer Datei heraus ausgeführt. Großartig, oder?
 
@@ -593,12 +628,16 @@ if 3 > 2:
 
 Würden wir das nun speichern und anschließend ausführen, würden wir einen Fehler erhalten:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py
 File "python_intro.py", line 2
          ^
 SyntaxError: unexpected EOF while parsing
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Python erwartet hier noch weiteren Programmcode, der ausgeführt werden soll, wenn die Bedingung `3 > 2` wahr ist \(also `True` ergibt\). Versuchen wir, Python “It works!” ausgeben zu lassen. Ändere den Code in **python\_intro.py** zu:
 
@@ -611,10 +650,14 @@ Du fragst dich nun, warum wir die angefügte Zeile mit 4 Leerzeichen eingerückt
 
 Nun sichere die Datei und führe sie noch einmal aus:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```python
 $ python3 python_intro.py 
 It works!
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Hinweis: Denk daran, dass Windows den 'python3'-Befehl nicht kennt. Falls du auf Windows arbeitest, verwende ab jetzt immer 'python', wenn in dieser Anleitung 'python3' steht.
 
@@ -631,10 +674,14 @@ else:
 
 Wenn dies ausgeführt wird, wird es anzeigen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py 
 5 ist wirklich größer als 2
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wenn 2 größer als 5 wäre, würde die zweite Anweisung \(die nach dem else\) ausgeführt. Schauen wir uns nun an, wie `elif` funktioniert:
 
@@ -650,10 +697,14 @@ else:
 
 und ausgeführt erhalten wir:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py
 Hey Sonja!
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Hast du bemerkt, was passiert ist? `elif` lässt dich zusätzliche Bedingungen hinzufügen, die geprüft werden, falls die vorherige fehlschlägt.
 
@@ -677,10 +728,14 @@ else:
 
 Python läuft durch jeden Test der Reihe nach und gibt dann aus:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py 
 Perfekt, ich kann alle Details hören.
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 ### Kommentare
 
@@ -731,11 +786,15 @@ Nun fragst du dich vielleicht, warum wir am Ende der Datei den Namen der Funktio
 
 Schauen wir, was passiert, wenn wir die Datei ausführen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py
 Halli-hallo!
 Wie geht's?
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Falls das nicht funktionert hat, keine Panik! Die Ausgabe wird dir dabei helfen, herauszufinden wieso:
 
@@ -765,6 +824,8 @@ hallo()
 
 Denk daran: Die `print`-Funktion ist 4 Leerzeichen innerhalb der `if`-Anweisung eingerückt. Das ist sinnvoll, da die Funktion ausgeführt wird, wenn die Bedingung eintritt. Mal sehen, wie das jetzt funktioniert:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py 
 Traceback (most recent call last): 
@@ -772,6 +833,8 @@ File "python_intro.py", line 10, in <module>
    hallo() 
 TypeError: hallo() missing 1 required positional argument: 'name'
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Hoppla, ein Fehler. Zum Glück gibt uns Python eine recht nützliche Fehlermeldung. Diese besagt, dass die Funktion `hallo()` \(welche wir definiert haben\) ein erforderliches Argument \(namens `name`\) hat und dass wir vergessen haben, dieses beim Funktionsaufruf mitzugeben. Lass uns das am unteren Ende der Datei schnell beheben:
 
@@ -794,10 +857,14 @@ hallo("Sonja")
 
 Und ausgeführt:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py 
 Hallo Sonja!
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Nun, was denkst du, wird passieren, wenn du einen anderen Namen dort hinein schreibst? \(Weder Ola noch Sonja.\) Probier es aus und schau, ob du richtig liegst. Es sollte das Folgende herauskommen:
 
@@ -818,10 +885,14 @@ hallo("Rachel")
 
 Lass uns den Code aufrufen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py 
 Hallo Rachel!
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Herzlichen Glückwunsch! Du hast gerade gelernt, wie du Funktionen schreibst! :\)
 
@@ -861,6 +932,8 @@ for name in girls:
 
 Und wenn wir es ausführen:
 
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 python_intro.py
 Hallo Rachel!
@@ -874,6 +947,8 @@ Nächstes Mädchen
 Hallo du!
 Nächstes Mädchen
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wie du sehen kannst, wird alles, was du innerhalb einer `for`-Anweisung eingerückt hast, für jedes Element der Liste `girls` wiederholt.
 
