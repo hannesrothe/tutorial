@@ -1,4 +1,4 @@
-# W1 Installation
+# Installation
 
 ## Wenn du dieses Tutorial zu Hause bearbeitest
 

@@ -1,4 +1,4 @@
-# W1 Einleitung
+# Einleitung
 
 ![Systementwicklung Einf&#xFC;hrung @FUB](.gitbook/assets/logo_systementwicklung_deh.jpg)
 

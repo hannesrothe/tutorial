@@ -1,7 +1,7 @@
 # Table of contents
 
-* [W1 Einleitung](README.md)
-* [W1 Installation](installation.md)
+* [Einleitung](README.md)
+* [Installation](installation.md)
 * [W1 Installation \(Chromebook\)](chromebook_setup.md)
 * [W1 Wie das Internet funktioniert](how_the_internet_works.md)
 * [W1 Einführung in die Kommandozeile](intro_to_command_line.md)
