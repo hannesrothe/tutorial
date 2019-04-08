@@ -6,7 +6,7 @@
 
 Fangen wir an, schreiben wir Code!
 
-### Der Python-Prompt
+### Die Python-Prompt
 
 > Für Leserinnen, die sich bereits mit Python auskennen: Dieser Teil befindet sich im [Python Basics: Integers, Strings, Lists, Variables and Errors](https://www.youtube.com/watch?v=MO63L4s-20U) Video.
 
