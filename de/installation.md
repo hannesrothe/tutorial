@@ -58,49 +58,59 @@ Auf der Website [https://www.python.org/downloads/release/python-361/](https://w
 
 Es ist ziemlich wahrscheinlich, dass du Python schon automatisch installiert hast. Um herauszufinden, ob das so ist \(und wenn ja, welche Version du hast\), öffne eine Konsole und gib das folgende Kommando ein:
 
-{% filename %}command-line{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 --version
 Python 3.6.1
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Wenn du eine andere 'Mikroversion' von Python installiert hast, z.B. 3.6.0, dann musst du die Version nicht aktualisieren. Wenn Python bei dir nicht installiert ist, oder du eine neuere Version willst, kannst du das folgendermaßen tun:
 
 Gib diesen Befehl in die Konsole ein:
 
-{% filename %}command-line{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ sudo apt install python3
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Gib diesen Befehl in die Konsole ein:
 
-{% filename %}command-line{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ sudo dnf install python3
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Auf älteren Fedora-Versionen kann es sein, dass du eine Fehlermeldung bekommst, dass das Kommando `dnf` nicht gefunden wird. Falls das passiert, musst du stattdessen `yum` verwenden.
 
 Gib diesen Befehl in die Konsole ein:
 
-{% filename %}command-line{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ sudo zypper install python3
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Prüfe, ob die Installation erfolgreich war, indem du ein Kommandozeilenfenster öffnest und den `python3`-Befehl ausführst:
 
-{% filename %}command-line{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
 ```text
 $ python3 --version
 Python 3.6.1
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Die angezeigte Version kann bei dir eine andere sein als 3.6.1 -- sie sollte aber der entsprechen, die du installiert hast.
 
@@ -422,11 +432,13 @@ Mit dem Tool Cloud IDE erhältst du Zugang zu einem Code-Editor und einem Rechne
 
 Jetzt solltest du links eine Schnittstelle mit einer Seitenleiste und Schaltflächen sehen. Klicke auf den "Terminal"-Button und öffne das Terminal-Fenster mit einer Eingabeaufforderung wie folgt:
 
-{% filename %}browser{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="im Browser" %}
 ```text
 $
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Das Terminal auf der PaizaCloud Cloud IDE steht für deine Anweisungen bereit. Du kannst die Größe des Fensters frei einstellen.
 
@@ -438,11 +450,13 @@ Das Terminal auf der PaizaCloud Cloud IDE steht für deine Anweisungen bereit. D
 
 Jetzt solltest du eine Benutzeroberfläche mit Seitenleiste, ein grosses Fenster mit Text und am unteren Rand ein Feld sehen, das wie folgt aussieht:
 
-{% filename %}bash{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="Im Bash" %}
 ```text
 deinbenutzername:~/workspace $
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Dieser untere Bereich ist dein Terminal. Dort kannst du Kommandos für den Computer eingeben, den dir Cloud 9 zur Verfügung stellt. Du kannst dieses Fenster vergrößern oder verkleinern.
 
@@ -452,25 +466,29 @@ Eine virtuelle Umgebung \(auch virtualenv genannt\) ist wie ein privater Behält
 
 Führe im Terminal den folgenden Code aus \(das Terminal befindet sich am unteren Rand des Cloud 9-Interfaces\):
 
-{% filename %}Cloud 9{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="Cloud 9" %}
 ```text
 sudo apt update
 sudo apt install python3.6-venv
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 Falls das nicht funktioniert, frag' deinen Coach um Hilfe.
 
 Führe dann die folgenden Befehle aus:
 
-{% filename %}Cloud 9{% endfilename %}
-
+{% code-tabs %}
+{% code-tabs-item title="Cloud 9" %}
 ```text
 mkdir djangogirls
 cd djangogirls python3.6 -mvenv myvenv
 source myvenv/bin/activate
 pip install django~={{ book.django_version }}
 ```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
 
 \(Beachte, dass wir im letzten Befehl eine Tilde gefolgt von einem Gleichheitssymbol benutzen: `~=`\).
 

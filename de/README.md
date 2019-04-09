@@ -12,7 +12,7 @@ Wir hoffen, dass du danach diese Technik und Technologien so sehr mögen wirst w
 
 ## Was lernst du in diesem Tutorial?
 
-Wenn du mit dem Tutorial fertig bist, hast du eine einfache, aber funktionierende Webanwendung: deinen eigenen Blog. Wir zeigen dir, wie man ihn online stellt, andere können dein Werk also sehen!
+Wenn du mit dem Tutorial fertig bist, hast du eine einfache, aber funktionierende Webanwendung: deinen eigenen Blog.
 
 Es wird \(in etwa\) so aussehen:
 
