@@ -31,17 +31,9 @@ $ cd djangogirls
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-Wir erstellen eine virtuelle Umgebung namens `myvenv`. Das Kommando dazu lautet dann:
+Wir erstellen eine virtuelle Umgebung namens `myvenv`. 
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
-```text
-$ python3 -m venv myvenv
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-#### **Virtual environment: Windows**
+#### **Windows \(eigener PC ohne Anaconda Umgebung\)**
 
 Um ein neues `virtualenv` zu erzeugen, musst du auf der Kommandozeile von Windows `python -m venv myvenv` ausführen. Das wird so aussehen:
 
@@ -55,7 +47,19 @@ C:\Users\Name\djangogirls> python -m venv myvenv
 
 wobei `myvenv` der Name deines `virtualenv` ist. Du kannst auch irgend einen anderen Namen wählen, aber bleibe bei Kleinbuchstaben und verwende keine Leerzeichen, Umlaute oder Sonderzeichen. Eine Gute Idee ist, den Namen kurz zu halten. Du wirst ihn oft benutzen bzw. eingeben müssen!
 
-#### **Virtual environment: Linux and OS X**
+#### **Windows \(PC Pool mit Anaconda Umgebung\)**
+
+Um ein neues `virtualenv` zu erzeugen, musst du auf der Kommandozeile von Windows `conda install -n myvenv` ausführen. Das wird so aussehen:
+
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
+```text
+C:\Users\Name\djangogirls> conda install -n mynvenv
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+#### **Linux and OS X**
 
 Auf Linux oder OS X kann ein `virtualenv` durch das Ausführen von `python3 -m venv myvenv`erzeugt werden. Das wird so aussehen:
 
@@ -136,7 +140,7 @@ $ python3 -m venv myvenv
 
 Die obigen Kommandos erstellen ein Verzeichnis `myvenv` \(bzw. den von Dir vergebenen Namen\). Es enthält unsere virtuelle Arbeitsumgebung \(im Wesentlichen ein paar Verzeichnisse und Dateien\).
 
-#### **Working with virtualenv: Windows**
+#### **Windows \(eigener PC ohne Anaconda Umgebung\)**
 
 Starte deine virtuelle Umgebung, indem du Folgendes eingibst:
 
@@ -171,7 +175,29 @@ Bei Erfolg sollte in deiner Kommandozeile nun die virtuelle Umgebung in Klammern
 > {% endcode-tabs-item %}
 > {% endcode-tabs %}
 
-#### **Working with virtualenv: Linux and OS X**
+#### **Windows \(PC Pool mit Anaconda Umgebung\)**
+
+Starte deine virtuelle Umgebung, indem du Folgendes eingibst:
+
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
+```text
+C:\Users\Name\djangogirls> activate myvenv
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Bei Erfolg sollte in deiner Kommandozeile nun die virtuelle Umgebung in Klammern vorangestellt sein. Das sieht in etwa so aus:
+
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
+```text
+(myvenv) C:\Users\Name\djangogirls>
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+#### **Linux and OS X**
 
 Starte deine virtuelle Umgebung, indem du eingibst:
 
