@@ -197,6 +197,16 @@ Bei Erfolg sollte in deiner Kommandozeile nun die virtuelle Umgebung in Klammern
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
+> **Anmerkung:** Um die virtuelle Umgebung zu verlassen gebe `deactivate` ein:
+>
+> {% code-tabs %}
+> {% code-tabs-item title="in der Kommandozeile" %}
+> ```text
+> (myvenv) C:\Users\Name\djangogirls> deactivate
+> ```
+> {% endcode-tabs-item %}
+> {% endcode-tabs %}
+
 #### **Linux and OS X**
 
 Starte deine virtuelle Umgebung, indem du eingibst:
