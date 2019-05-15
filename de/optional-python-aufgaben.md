@@ -43,5 +43,5 @@ b\) Kreiere eine Methode vorstellen\(\), die auf der Konsole für das jeweilige 
 
 c\) Kreiere eine zweite Methode abnehmen\(\), die als Parameter das reduzierte Gewicht erhält und dieses dann vom alten Gewicht abzieht. Das alte und neue Gewicht soll dann auf der Konsole ausgegeben werden \("Neues Gewicht: \[gewicht\] kg"\). Verwende die Methode für die beiden oben instanziierten Objekte.
 
-Die Lösungen zu den Aufgaben findet ihr auf einer separaten Seite, genau hier.
+Die Lösungen zu den Aufgaben findet ihr auf einer separaten Seite, genau [hier](optional-python-aufgaben-mit-loesung.md).
 
