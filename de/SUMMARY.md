@@ -26,4 +26,6 @@
 * [W10 Django-Formulare](django_forms.md)
 * [Wie geht es weiter?](whats_next.md)
 * [Optional: Veröffentlichen!](deploy.md)
+* [Optional: Python-Aufgaben](optional-python-aufgaben.md)
+* [Optional: Python-Aufgaben \(mit Lösung\)](optional-python-aufgaben-mit-loesung.md)
 
