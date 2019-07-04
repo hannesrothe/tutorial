@@ -172,3 +172,49 @@ Branch master set up to track remote branch master from origin.
 
 Dein Code ist jetzt auf GitHub. Schau gleich mal nach! Dort ist dein Code in guter Gesellschaft - [Django](https://github.com/django/django), das [Django Girls Tutorial](https://github.com/DjangoGirls/tutorial) und viele andere großartige Open Source Software-Projekte haben ihren Code auf GitHub. :\)
 
+### Ein bestehendes Git-Repository lokal nutzen
+
+Um ein Git-Repository zu nutzen, braucht ihr als erstes die URL zum Git-Repository. Dafür ruft ihr es am besten als erstes in Github auf und klickt auf "clone". Daraufhin erhaltet ihr die URL zu eurem Repository. 
+
+![](.gitbook/assets/image%20%282%29.png)
+
+Die URL kopiert ihr und öffnet in der Konsole den Ordner, in dem das Repository lokal liegen soll und klont das Repository.
+
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
+```text
+$ git clone [URL zum Repository]
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Nun liegen alle Dateien lokal im Ordner, in dem ihr den Code ausgeführt habt. Mit folgendem Befehl könnt ihr nun Aktualisierungen immer abfragen:
+
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile" %}
+```text
+$ git pull
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
+Um jedoch Änderungen durchführen zu können und hochzuladen, müssen eure Gruppenmitglieder als Collaborators eingetragen sein:
+
+![](.gitbook/assets/image%20%281%29.png)
+
+Anschließend können sie Änderungen lokal durchführen und hochladen. Mit "git commit" werden Änderungen zum Hochladen eingereiht und kurz kommentiert. Durch "git push" erfolgt das eigentliche Hochladen. Es empfiehlt sich vorher stets noch einmal "git pull" durchzuführen um sicherzugehen, dass lokal auch die neueste Version des Codes funktioniert.
+
+{% code-tabs %}
+{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
+```text
+$ git commit -m "KOMMENTAR"
+ [...]
+ 13 files changed, 200 insertions(+)
+ create mode 100644 .gitignore
+ [...]
+ create mode 100644 mysite/wsgi.py
+$ git push
+```
+{% endcode-tabs-item %}
+{% endcode-tabs %}
+
