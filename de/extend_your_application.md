@@ -14,8 +14,7 @@ Wir haben bereits ein `Post`-Model, deshalb brauchen wir nichts zur `models.py` 
 
 Wir beginnen damit, einen Link in der `blog/templates/blog/post_list.html`-Datei zu erstellen. Öffne sie im Code-Editor, und bisher sollte sie etwa so aussehen:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% extends 'blog/base.html' %}
 
@@ -31,18 +30,15 @@ Wir beginnen damit, einen Link in der `blog/templates/blog/post_list.html`-Datei
     {% endfor %}
 {% endblock %}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wir wollen einen Link vom Titel eines Posts in der Post-Liste zur Detailseite des jeweiligen Posts haben. Ändern wir `<h1><a href="">{{ post.title }}</a></h1>`, so dass es zu der Detailseite verlinkt:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Es ist an der Zeit, das mysteriöse  `{% url 'post_detail' pk=post.pk %}` zu erklären. Wie du dir wahrscheinlich schon denkst, bedeutet dass wir Django-Template-Tags verwenden. Dieses Mal verwenden wir eines, das eine URL für uns erzeugen wird!
 
@@ -62,8 +58,7 @@ Wir wollen, dass unsere erste Blogpost-Detailseite unter dieser **URL** angezeig
 
 Lass uns eine URL in der Datei `blog/urls.py` anlegen, um Django auf die _View_ `post_detail` zu verweisen, welche dann den ganzen Blogpost anzeigen wird. Öffne die Datei `blog/urls.py` im Code-Editor und füge die Zeile `path('post/<int:pk>/', views.post_detail, name='post_detail'),` hinzu, so dass die Datei wie folgt aussieht:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/urls.py" %}
+{% code title="blog/urls.py" %}
 ```python
 from django.urls import path
 from . import views
@@ -73,8 +68,7 @@ urlpatterns = [
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
 ]
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Der Teil `post/<int:pk>/` definiert ein URL-Muster – wir erklären es dir:
 
@@ -96,13 +90,11 @@ Dieses Mal bekommt unsere _View_ den extra Parameter `pk`. Unsere _View_ muss di
 
 Jetzt benötigen wir also genau einen bestimmten Blogpost. Diesen finden wir, indem wir ein QuerySet folgendermaßen schreiben:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/views.py" %}
+{% code title="blog/views.py" %}
 ```python
 Post.objects.get(pk=pk)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Aber bei diesem Code gibt es ein Problem. Wenn es kein `Post`-Objekt mit diesem `primary key` \(`pk`\) gibt, bekommen wir einen super-hässlichen Fehler!
 
@@ -120,25 +112,21 @@ In `blog/urls.py` haben wir eine URL-Regel namens `post_detail` erstellt, die au
 
 Wir sollten also `blog/views.py` im Code-Editor öffnen und den folgenden Code zu den anderen `from` Zeilen hinzufügen:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/views.py" %}
+{% code title="blog/views.py" %}
 ```python
 from django.shortcuts import render, get_object_or_404
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Und am Ende der Datei werden wir unsere _View_-Funktion ergänzen:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/views.py" %}
+{% code title="blog/views.py" %}
 ```python
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Super. Lass uns nun [http://127.0.0.1:8000/](http://127.0.0.1:8000/) neu laden.
 
@@ -156,8 +144,7 @@ Wir erstellen eine Datei in `blog/templates/blog` mit dem Namen `post_detail.htm
 
 Das sieht dann so aus:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_detail.html" %}
+{% code title="blog/templates/blog/post\_detail.html" %}
 ```markup
 {% extends 'blog/base.html' %}
 
@@ -173,8 +160,7 @@ Das sieht dann so aus:
     </div>
 {% endblock %}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wir erweitern wieder `base.html`. Im `content`-Block wollen wir das Publikationsdatum eines Posts \(published\_date\), falls es existiert, anzeigen und auch den Titel und den Text. Aber wir müssen noch ein paar wichtige Dinge klären, oder?
 

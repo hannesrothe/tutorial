@@ -64,38 +64,32 @@ Auf der Website [https://www.python.org/downloads/release/python-361/](https://w
 
 Es ist ziemlich wahrscheinlich, dass du Python schon automatisch installiert hast. Um herauszufinden, ob das so ist \(und wenn ja, welche Version du hast\), öffne eine Konsole und gib das folgende Kommando ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ python3 --version
 Python 3.6.1
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wenn du eine andere 'Mikroversion' von Python installiert hast, z.B. 3.6.0, dann musst du die Version nicht aktualisieren. Wenn Python bei dir nicht installiert ist, oder du eine neuere Version willst, kannst du das folgendermaßen tun:**Install Python: Debian or Ubuntu**
 
 Gib diesen Befehl in die Konsole ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo apt install python3
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### **Install Python: Fedora**
 
 Gib diesen Befehl in die Konsole ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo dnf install python3
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Auf älteren Fedora-Versionen kann es sein, dass du eine Fehlermeldung bekommst, dass das Kommando `dnf` nicht gefunden wird. Falls das passiert, musst du stattdessen `yum` verwenden.
 
@@ -103,24 +97,20 @@ Auf älteren Fedora-Versionen kann es sein, dass du eine Fehlermeldung bekommst,
 
 Gib diesen Befehl in die Konsole ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo zypper install python3
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Prüfe, ob die Installation erfolgreich war, indem du ein Kommandozeilenfenster öffnest und den `python3`-Befehl ausführst:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ python3 --version
 Python 3.6.1
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Die angezeigte Version kann bei dir eine andere sein als 3.6.1 -- sie sollte aber der entsprechen, die du installiert hast.
 
@@ -180,24 +170,20 @@ Du musst nur das Verzeichnis festlegen, in dem du das `virtualenv` erstellen wil
 
 In diesem Tutorial erstellen wir darin ein neues Verzeichnis `djangogirls`:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 $ mkdir djangogirls
 $ cd djangogirls
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wir erstellen eine virtuelle Umgebung namens `myvenv`. Das Kommando dazu lautet dann:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 $ python3 -m venv myvenv
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### **Virtual environment: Windows**
 
@@ -205,13 +191,11 @@ $ python3 -m venv myvenv
 
 Um ein neues `virtualenv` zu erzeugen, musst du auf der Kommandozeile von Windows `python -m venv myvenv` ausführen. Das wird so aussehen:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 C:\Users\Name\djangogirls> python -m venv myvenv
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 wobei `myvenv` der Name deines `virtualenv` ist. Du kannst auch irgend einen anderen Namen wählen, aber bleibe bei Kleinbuchstaben und verwende keine Leerzeichen, Umlaute oder Sonderzeichen. Eine Gute Idee ist, den Namen kurz zu halten. Du wirst ihn oft benutzen bzw. eingeben müssen!
 
@@ -219,90 +203,74 @@ wobei `myvenv` der Name deines `virtualenv` ist. Du kannst auch irgend einen and
 
 Um ein neues `virtualenv` zu erzeugen, musst du auf der Kommandozeile von Windows `conda install -n myvenv` ausführen. Das wird so aussehen:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 C:\Users\Name\djangogirls> conda install -n myvenv
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### **Virtual environment: Linux and OS X**
 
 Auf Linux oder OS X kann ein `virtualenv` durch das Ausführen von `python3 -m venv myvenv`erzeugt werden. Das wird so aussehen:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 $ python3 -m venv myvenv
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 `myvenv` ist der Name deiner neuen virtuellen Arbeitsumgebung, deines neuen `virtualenv`. Du kannst auch irgend einen anderen Namen wählen, aber bleibe bei Kleinbuchstaben und verwende keine Leerzeichen. Eine Gute Idee ist, den Namen kurz zu halten. Du wirst ihn oft benutzen bzw. eingeben müssen!
 
 > **Hinweis:** Bei manchen Versionen von Debian/Unbuntu kann folgender Fehler auftreten:
 
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > The virtual environment was not created successfully because ensurepip is not available.  On Debian/Ubuntu systems, you need to install the python3-venv package using the following command.
 >    apt install python3-venv
 > You may need to use sudo with that command.  After installing the python3-venv package, recreate your virtual environment.
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 >
 > Falls das auftritt, folge den Anweisungen in der Fehlermeldung und installiere das `python3-venv`-Paket:
 >
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > $ sudo apt install python3-venv
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 >
 > **HINWEIS:** In manchen Debian/Ubuntu-Versionen kann das zu folgendem Fehler führen:
 >
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 >
 > Falls das eintritt, verwende stattdessen den `virtualenv`-Befehl.
 >
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > $ sudo apt install python-virtualenv
 > $ virtualenv --python=python3.6 myvenv
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 >
 > **HINWEIS:** Wenn du einen Fehler wie
 >
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > E: Unable to locate package python3-venv
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 >
 > erhältst, führe stattdessen Folgendes aus:
 >
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > sudo apt install python3.6-venv
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 
 ## Mit der virtuellen Umgebung arbeiten
 
@@ -312,13 +280,11 @@ Die obigen Kommandos erstellen ein Verzeichnis `myvenv` \(bzw. den von Dir verge
 
 Starte deine virtuelle Umgebung, indem du Folgendes eingibst:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 C:\Users\Name\djangogirls> myvenv\Scripts\activate
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 > **HINWEIS:** Auf Windows 10 kannst du in der Windows PowerShell die Fehlermeldung `execution of scripts is disabled on this system` erhalten. Öffne in diesem Fall eine weitere Windows PowerShell über "Als Administrator ausführen". Versuche dann, das folgende Kommando einzugeben, bevor du das virtualenv noch einmal aktivierst:
 >
@@ -334,13 +300,11 @@ C:\Users\Name\djangogirls> myvenv\Scripts\activate
 
 Starte deine virtuelle Umgebung indem du Folgendes eingibst. 
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 C:\Users\Name\djangogirls> activate myvenv
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Der Name `myvenv` muss mit dem von Dir gewählten Namen des `virtualenv` übereinstimmen!
 
@@ -348,25 +312,21 @@ Der Name `myvenv` muss mit dem von Dir gewählten Namen des `virtualenv` überei
 
 Starte deine virtuelle Umgebung, indem du eingibst:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 $ source myvenv/bin/activate
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Der Name `myvenv` muss mit dem von Dir gewählten Namen des `virtualenv` übereinstimmen!
 
 > **Anmerkung:** Manchmal ist das Kommando `source` nicht verfügbar. In diesen Fällen geht es auch so:
 >
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > $ . myvenv/bin/activate
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 
 Du erkennst, dass dein `virtualenv` gestartet ist, wenn du vor der Eingabeaufforderung eine Klammer mit dem Namen deiner Umgebung siehst, `(myvenv)`.
 
@@ -380,13 +340,11 @@ Da du nun dein `virtualenv` gestartet hast, kannst du Django installieren.
 
 Bevor wir damit loslegen, sollten wir jedoch sicherstellen, dass wir die neueste Version von `pip` haben, eine Software, mit Hilfe derer wir Django installieren werden:
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 (myvenv) ~$ python -m pip install --upgrade pip
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 #### Pakete mittels requirements-Datei installieren
 
@@ -401,18 +359,15 @@ djangogirls
 
 Schreibe in die Datei `djangogirls/requirements.txt` folgenden Text:
 
-{% code-tabs %}
-{% code-tabs-item title="djangogirls/requirements.txt" %}
+{% code title="djangogirls/requirements.txt" %}
 ```text
 Django~=2.0.6
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Führe nun `pip install -r requirements.txt` aus, um Django zu installieren.
 
-{% code-tabs %}
-{% code-tabs-item title="In der Kommandozeile" %}
+{% code title="In der Kommandozeile" %}
 ```text
 (myvenv) ~$ pip install -r requirements.txt
 Collecting Django~=2.0.6 (from -r requirements.txt (line 1))
@@ -420,8 +375,7 @@ Collecting Django~=2.0.6 (from -r requirements.txt (line 1))
 Installing collected packages: Django
 Successfully installed Django-2.0.6
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 #### **Installing Django: Windows**
 
@@ -431,13 +385,11 @@ Successfully installed Django-2.0.6
 
 > Es kann sein, dass deine Befehlszeile einfriert, wenn du versuchst Django zu installieren. Sollte das passieren, nutze folgenden Befehl anstelle des oben angegebenen:
 >
-> {% code-tabs %}
-> {% code-tabs-item title="In der Kommandozeile" %}
+> {% code title="In der Kommandozeile" %}
 > ```text
 > C:\Users\Name\djangogirls> python -m pip install -r requirements.txt
 > ```
-> {% endcode-tabs-item %}
-> {% endcode-tabs %}
+> {% endcode %}
 
 #### **Installing Django: Linux**
 
@@ -508,13 +460,11 @@ Mit dem Tool Cloud IDE erhältst du Zugang zu einem Code-Editor und einem Rechne
 
 Jetzt solltest du links eine Schnittstelle mit einer Seitenleiste und Schaltflächen sehen. Klicke auf den "Terminal"-Button und öffne das Terminal-Fenster mit einer Eingabeaufforderung wie folgt:
 
-{% code-tabs %}
-{% code-tabs-item title="im Browser" %}
+{% code title="im Browser" %}
 ```text
 $
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Das Terminal auf der PaizaCloud Cloud IDE steht für deine Anweisungen bereit. Du kannst die Größe des Fensters frei einstellen.
 
@@ -526,13 +476,11 @@ Das Terminal auf der PaizaCloud Cloud IDE steht für deine Anweisungen bereit. D
 
 Jetzt solltest du eine Benutzeroberfläche mit Seitenleiste, ein grosses Fenster mit Text und am unteren Rand ein Feld sehen, das wie folgt aussieht:
 
-{% code-tabs %}
-{% code-tabs-item title="Im Bash" %}
+{% code title="Im Bash" %}
 ```text
 deinbenutzername:~/workspace $
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Dieser untere Bereich ist dein Terminal. Dort kannst du Kommandos für den Computer eingeben, den dir Cloud 9 zur Verfügung stellt. Du kannst dieses Fenster vergrößern oder verkleinern.
 
@@ -542,29 +490,25 @@ Eine virtuelle Umgebung \(auch virtualenv genannt\) ist wie ein privater Behält
 
 Führe im Terminal den folgenden Code aus \(das Terminal befindet sich am unteren Rand des Cloud 9-Interfaces\):
 
-{% code-tabs %}
-{% code-tabs-item title="Cloud 9" %}
+{% code title="Cloud 9" %}
 ```text
 sudo apt update
 sudo apt install python3.6-venv
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Falls das nicht funktioniert, frag' deinen Coach um Hilfe.
 
 Führe dann die folgenden Befehle aus:
 
-{% code-tabs %}
-{% code-tabs-item title="Cloud 9" %}
+{% code title="Cloud 9" %}
 ```text
 mkdir djangogirls
 cd djangogirls python3.6 -mvenv myvenv
 source myvenv/bin/activate
 pip install django~={{ book.django_version }}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 \(Beachte, dass wir im letzten Befehl eine Tilde gefolgt von einem Gleichheitssymbol benutzen: `~=`\).
 

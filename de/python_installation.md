@@ -58,38 +58,32 @@ Auf der Website [https://www.python.org/downloads/release/python-361/](https://w
 
 Es ist ziemlich wahrscheinlich, dass du Python schon automatisch installiert hast. Um herauszufinden, ob das so ist \(und wenn ja, welche Version du hast\), öffne eine Konsole und gib das folgende Kommando ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ python3 --version
 Python 3.6.1
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wenn du eine andere 'Mikroversion' von Python installiert hast, z.B. 3.6.0, dann musst du die Version nicht aktualisieren. Wenn Python bei dir nicht installiert ist, oder du eine neuere Version willst, kannst du das folgendermaßen tun:**Install Python: Debian or Ubuntu**
 
 Gib diesen Befehl in die Konsole ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo apt install python3
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### **Install Python: Fedora**
 
 Gib diesen Befehl in die Konsole ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo dnf install python3
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Auf älteren Fedora-Versionen kann es sein, dass du eine Fehlermeldung bekommst, dass das Kommando `dnf` nicht gefunden wird. Falls das passiert, musst du stattdessen `yum` verwenden.
 
@@ -97,24 +91,20 @@ Auf älteren Fedora-Versionen kann es sein, dass du eine Fehlermeldung bekommst,
 
 Gib diesen Befehl in die Konsole ein:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo zypper install python3
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Prüfe, ob die Installation erfolgreich war, indem du ein Kommandozeilenfenster öffnest und den `python3`-Befehl ausführst:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ python3 --version
 Python 3.6.1
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Die angezeigte Version kann bei dir eine andere sein als 3.6.1 -- sie sollte aber der entsprechen, die du installiert hast.
 

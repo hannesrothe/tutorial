@@ -38,8 +38,7 @@ Der Fehler sollte weg sein! Toll :\) Deine Webseite ist allerdings noch leer, we
 
 Öffne die neue Datei im Code-Editor, und füge Folgendes hinzu:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 <html>
 <body>
@@ -48,8 +47,7 @@ Der Fehler sollte weg sein! Toll :\) Deine Webseite ist allerdings noch leer, we
 </body>
 </html>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Hat sich die Seite geändert? Besuche [http://127.0.0.1:8000/](http://127.0.0.1:8000/), um nachzusehen.
 
@@ -71,8 +69,7 @@ Im `<head>` informieren wir den Browser über Einstellungen und Konfigurationen 
 
 In den `<head>` können wir z.B. noch den Titel \(title\) der Seite mit aufnehmen:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 <html>
     <head>
@@ -84,8 +81,7 @@ In den `<head>` können wir z.B. noch den Titel \(title\) der Seite mit aufnehme
     </body>
 </html>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Speichere die Datei und aktualisiere die Seite im Browser.
 
@@ -116,8 +112,7 @@ Jetzt kannst du ein bisschen rumprobieren und dein Template umgestalten! Hier si
 
 Hier ist ein vollständiges Beispiel eines Templates. Kopiere es und füge es in `blog/templates/blog/post_list.html` ein:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 <html>
     <head>
@@ -142,8 +137,7 @@ Hier ist ein vollständiges Beispiel eines Templates. Kopiere es und füge es in
     </body>
 </html>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wir haben hier drei verschiedene `div` Abschnitte erstellt.
 

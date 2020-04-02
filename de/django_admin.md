@@ -4,16 +4,14 @@ Wir benutzen den Django-Admin, um die soeben modellierten Posts hinzuzufügen, z
 
 Öffne die Datei `blog/admin.py` im Code-Editor und ersetze den Inhalt wie folgt:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/admin.py" %}
+{% code title="blog/admin.py" %}
 ```python
 from django.contrib import admin
 from .models import Post
 
 admin.site.register(Post)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wie du siehst, importieren wir hier das Model "Post", das wir im vorherigen Kapitel erstellt haben. Damit unser Model auf der Admin-Seite sichtbar wird, müssen wir es mit `admin.site.register(Post)` registrieren.
 
@@ -25,26 +23,21 @@ Um dich einloggen zu können, musst du zunächst einen _superuser_ erstellen - e
 
 > Denke daran, damit du neue Kommandos eingeben kannst während der Webserver läuft, musst du ein neues Terminal öffnen und deine virtualenv aktivieren. Wie man neue Kommandos eingeben kann, haben wir im Kapitel **Dein erstes Django-Projekt!** unter **Den Webserver starten** behandelt.
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py createsuperuser
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 (myvenv) C:\Users\Name\djangogirls> python manage.py createsuperuser
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wenn du dazu aufgefordert wirst, gib einen Benutzernamen \(Kleinbuchstaben, keine Leerzeichen\), eine Mailadresse und ein Passwort ein. **Mach dir keine Gedanken, wenn du das Passwort bei der Eingabe nicht sehen kannst - so soll es sein.** Tippe weiter und drücke `Enter`, um weiterzumachen. Du solltest nun Folgendes sehen \(wobei Benutzername und Email deine eigenen sein sollten\):
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 Username: hannes
 Email address: hannes@example.com
@@ -52,8 +45,7 @@ Password:
 Password (again):
 Superuser created successfully.
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Geh nochmal in deinen Browser und log dich mit den Daten des Superusers ein, den du gerade erstellt hast. Du solltest nun das Django-Admin-Dashboard sehen.
 

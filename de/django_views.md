@@ -10,15 +10,13 @@ Views kommen in die `views.py` Datei. Wir fügen nun also unsere _Views_ zur Dat
 
 OK, wir öffnen jetzt diese Datei in unserem Code-Editor und schauen, was darin steht:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/views.py" %}
+{% code title="blog/views.py" %}
 ```python
 from django.shortcuts import render
 
 # Create your views here.
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 OK, hier steht noch nicht so viel.
 
@@ -26,14 +24,12 @@ Denk daran, Zeilen mit einem `#` am Anfang sind Kommentare – das bedeutet, das
 
 Lass uns eine _View_ erstellen, wie der Kommentar das vorschlägt. Füge die folgende Mini-View unter dem Kommentar ein:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/views.py" %}
+{% code title="blog/views.py" %}
 ```python
 def post_list(request):
     return render(request, 'blog/post_list.html', {})
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wie du siehst, definieren wir eine Funktion \(`def`\) mit dem Namen `post_list`, die den Parameter `request` entgegen nimmt und die mit `return` den Rückgabewert einer anderen Funktion namens `render` zurück gibt. Letztere wird unser Template `blog/post_list.html` "rendern" \(zu einer fertigen HTML-Seite zusammensetzen\).
 

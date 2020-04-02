@@ -65,21 +65,17 @@ Du kannst dir ein Model wie eine Tabelle mit Spalten \("Feldern", englisch "fiel
 
 Um unsere Webseite aufgeräumt zu halten, werden wir eine eigene Anwendung für unser Projekt erstellen, wir nennen das eine Applikation. Wir wollen uns gleich daran gewöhnen, alles ordentlich und sortiert zu halten. Um eine Applikation zu erstellen, müssen wir das folgende Kommando in der Konsole ausführen \(wieder in dem `djangogirls`-Verzeichnis, in dem die `manage.py`-Datei liegt\):
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py startapp blog
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 (myvenv) C:\Users\Name\djangogirls> python manage.py startapp blog
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wie du sehen kannst, wurde ein neues `blog`-Verzeichnis erstellt, welches schon einige Dateien enthält. Das Verzeichnis und die Dateien unseres Projektes sollten jetzt so aussehen:
 
@@ -106,8 +102,7 @@ djangogirls
 
 Nach dem Erstellen der Applikation müssen wir Django noch sagen, dass diese auch genutzt werden soll. Das tun wir in der Datei `mysite/settings.py` -- öffne diese in deinem Code-Editor. Wir suchen den Eintrag `INSTALLED_APPS` und fügen darin die Zeile `'blog',` direkt über der schließenden Klammer `]` ein. Danach sollte es also so aussehen:
 
-{% code-tabs %}
-{% code-tabs-item title="settingy.py" %}
+{% code title="settingy.py" %}
 ```python
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -119,8 +114,7 @@ INSTALLED_APPS = [
     'blog',
 ]
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### Das Blogpost-Model
 
@@ -128,8 +122,7 @@ Alle `Models` unserer Applikation werden in der `blog/models.py`-Datei definiert
 
 Öffnen wir also `blog/models.py` im Code-Editor, löschen alles darin und schreiben Code wie diesen:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/models.py" %}
+{% code title="blog/models.py" %}
 ```python
 from django.conf import settings
 from django.db import models
@@ -150,8 +143,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 > Kontrolliere nochmal, dass du zwei Unterstriche \(`__`\) vor und hinter dem `str` gesetzt hast. Diese Konvention wird häufig in Python benutzt und manchmal nennen wir es "dunder" \(kurz für "double-underscore"\).
 
@@ -186,8 +178,7 @@ Wenn dir über Methoden noch etwas nicht klar ist, dann zögere nicht, deinen Co
 
 Als letzten Schritt wollen wir unser neues Model der Datenbank hinzufügen. Dazu müssen wir Django erst 'mal mitteilen, dass wir einige Änderungen an unserem Model vorgenommen haben. \(Wir haben es eben erst erstellt!\) Scheibe `python manage.py makemigrations blog` in dein Kommandozeilen-Fenster. Das sieht dann so aus:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py makemigrations blog
 Migrations for 'blog':
@@ -195,15 +186,13 @@ Migrations for 'blog':
 
   - Create model Post
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 **Hinweis:** Denke daran, die Dateien nach dem Editieren zu speichern. Ansonsten führt dein Computer die vorherige Version aus, was zu unerwarteten Fehlermeldungen führen kann.
 
 Django hat eine Migrationsdatei für uns vorbereitet, die wir nun auf unsere Datenbank anwenden müssen. Schreibe `python manage.py migrate blog`. Die Ausgabe sollte so aussehen:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 (myvenv) ~/djangogirls$ python manage.py migrate blog
 Operations to perform:   
@@ -211,8 +200,7 @@ Operations to perform:
 Running migrations:
    Applying blog.0001_initial... OK
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Hurra! Unser Post-Model ist ab sofort in unserer Datenbank gespeichert! Es wäre doch schön, zu wissen, wie es aussieht, oder? Springe zum nächsten Kapitel, um es dir anzusehen!
 

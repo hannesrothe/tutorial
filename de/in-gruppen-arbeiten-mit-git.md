@@ -26,33 +26,27 @@ Lade Git von [git-scm.com](https://git-scm.com/) herunter und folge dann den Anw
 
 #### **Installing Git: Debian or Ubuntu**
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo apt install git
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 #### **Installing Git: Fedora**
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo dnf install git
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 #### **Installing Git: openSUSE**
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ sudo zypper install git
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### Unser Git-Repository
 
@@ -60,16 +54,14 @@ Git verwaltet die Veränderungen an einer Sammlung von Dateien in einem sogenann
 
 > **Hinweis:** Überprüfe dein aktuelles Arbeitsverzeichnis mit dem Befehl `pwd` \(OSX/Linux\) oder `cd` \(Windows\) bevor du das Repository initialisierst. Du musst dich im `djangogirls`-Verzeichnis befinden, bevor du fortfährst.
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
+{% code title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git init
 Initialized empty Git repository in ~/djangogirls/.git/
 $ git config --global user.name "Dein Name"
 $ git config --global user.email du@example.com
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Die Initialisierung des Git-Repositorys müssen wir für jedes Projekt nur einmal machen \(danach musst Du Benutzernamen und Mail-Adresse nie wieder eingeben\).
 
@@ -93,8 +85,7 @@ Speichere die Datei mit dem Namen `.gitignore` im "djangogirls"-Root-Verzeichnis
 
 Es ist hilfreich den Befehl `git status` vor `git add` auszuführen oder immer dann, wenn du dir unsicher bist, was geändert wurde. Das schützt vor manchen Überraschungen, wie z. B. das falsche Hinzufügen oder Übertragen von Dateien. Das `git status`-Kommando gibt Informationen über unbeobachtete/veränderte/hinzugefügte Dateien, den Status der Verzweigung und einiges mehr wieder. Deine Ausgabe sollte dem hier ähneln:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
+{% code title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git status
 On branch master
@@ -112,13 +103,11 @@ Untracked files:
 
 nothing added to commit but untracked files present (use "git add" to track)
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Nun speichern wir unsere Änderungen durch folgende Eingabe in der Konsole:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
+{% code title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git add --all .
 $ git commit -m "My Django Girls app, first commit"
@@ -128,8 +117,7 @@ $ git commit -m "My Django Girls app, first commit"
  [...]
  create mode 100644 mysite/wsgi.py
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 ### Den Code auf GitHub veröffentlichen
 
@@ -149,14 +137,12 @@ Nun müssen wir das Git-Repository auf deinem Computer mit dem auf GitHub verbin
 
 Gib das Folgende auf der Kommandozeile ein \(ersetzte `<your-github-username>` mit dem Benutzernamen, den du beim Erstellen deines GitHub-Accounts gewählt hast, aber ohne die spitzen Klammern -- die URL sollte der clone-URL entsprechen, die du vorhin gerade gesehen hast\):
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
+{% code title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git remote add origin https://github.com/<your-github-username>/my-first-blog.git
 $ git push -u origin master
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Wenn du zu GitHub pushst, wirst du nach deinem Benutzernamen und Passwort gefragt \(entweder direkt im Kommandozeilen-Fenster oder in einem Pop-Up-Fenster\), und nach der Eingabe deiner Zugangsdaten solltest du etwas Ähnliches wie das hier sehen:
 
@@ -180,23 +166,19 @@ Um ein Git-Repository zu nutzen, braucht ihr als erstes die URL zum Git-Reposito
 
 Die URL kopiert ihr und öffnet in der Konsole den Ordner, in dem das Repository lokal liegen soll und klont das Repository.
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ git clone [URL zum Repository]
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Nun liegen alle Dateien lokal im Ordner, in dem ihr den Code ausgeführt habt. Mit folgendem Befehl könnt ihr nun Aktualisierungen immer abfragen:
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile" %}
+{% code title="in der Kommandozeile" %}
 ```text
 $ git pull
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Um jedoch Änderungen durchführen zu können und hochzuladen, müssen eure Gruppenmitglieder als Collaborators eingetragen sein:
 
@@ -204,8 +186,7 @@ Um jedoch Änderungen durchführen zu können und hochzuladen, müssen eure Grup
 
 Anschließend können sie Änderungen lokal durchführen und hochladen. Mit "git commit" werden Änderungen zum Hochladen eingereiht und kurz kommentiert. Durch "git push" erfolgt das eigentliche Hochladen. Es empfiehlt sich vorher stets noch einmal "git pull" durchzuführen um sicherzugehen, dass lokal auch die neueste Version des Codes funktioniert.
 
-{% code-tabs %}
-{% code-tabs-item title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
+{% code title="in der Kommandozeile \(im Django-Ordner , z.B. djangogirls/\)" %}
 ```text
 $ git commit -m "KOMMENTAR"
  [...]
@@ -215,6 +196,5 @@ $ git commit -m "KOMMENTAR"
  create mode 100644 mysite/wsgi.py
 $ git push
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 

@@ -20,8 +20,7 @@ blog
 
 Öffne sie im Code-Editor, kopiere alles von `post_list.html` und füge es wie folgt in die `base.html`-Datei ein:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/base.html" %}
+{% code title="blog/templates/blog/base.html" %}
 ```markup
 {% load static %}
 <html>
@@ -55,13 +54,11 @@ blog
     </body>
 </html>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Dann ersetze in `base.html` den gesamten `<body>` \(alles zwischen `<body>` und `</body>`\) hiermit:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/base.html" %}
+{% code title="blog/templates/blog/base.html" %}
 ```markup
 <body>
     <div class="page-header">
@@ -77,24 +74,20 @@ Dann ersetze in `base.html` den gesamten `<body>` \(alles zwischen `<body>` und 
     </div>
 </body>
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/base.html" %}
+{% code title="blog/templates/blog/base.html" %}
 ```markup
 {% block content %}
 {% endblock %}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Aber warum? Du hast gerade einen `block` erstellt! Du hast den Template-Tag benutzt, um einen Bereich zu schaffen, der HTML aufnehmen kann. Dieses HTML kommt aus einem anderen Template, welches das Template hier \(`base.html`\) erweitert. Wir zeigen dir gleich, wie das geht.
 
 Speichere nun die Datei `base.html` und öffne wieder `blog/templates/blog/post_list.html` im Code-Editor.
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% for post in posts %}
     <div class="post">
@@ -106,13 +99,11 @@ Speichere nun die Datei `base.html` und öffne wieder `blog/templates/blog/post_
     </div>
 {% endfor %}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Dieser Teil unseres Templates soll nun das Basis-Template erweitern. Wir müssen daher Block-Tags ergänzen!
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% block content %}
     {% for post in posts %}
@@ -126,13 +117,11 @@ Dieser Teil unseres Templates soll nun das Basis-Template erweitern. Wir müssen
     {% endfor %}
 {% endblock %}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Nur eine Sache noch. Wir müssen die beiden Templates miteinander verknüpfen. Darum geht es ja bei der Template-Erweiterung! Dafür ergänzen wir einen Tag für Erweiterung \(extends tag\) ganz oben in der Datei. Und zwar so:
 
-{% code-tabs %}
-{% code-tabs-item title="blog/templates/blog/post\_list.html" %}
+{% code title="blog/templates/blog/post\_list.html" %}
 ```markup
 {% extends 'blog/base.html' %}
 
@@ -148,8 +137,7 @@ Nur eine Sache noch. Wir müssen die beiden Templates miteinander verknüpfen. D
     {% endfor %}
 {% endblock %}
 ```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{% endcode %}
 
 Das war's! Speichere die Datei und probier aus, ob deine Website noch richtig funktioniert. :\)
 
