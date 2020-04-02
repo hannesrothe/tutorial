@@ -21,12 +21,14 @@ Es wird \(in etwa\) so aussehen:
 Okay, [lass uns ganz am Anfang starten...](how_the_internet_works.md)
 
 > Wenn du mit diesem Tutorial arbeitest und Fragen entstehen, bespreche sie in deinem Team oder sprich mit deinen Coaches. Hab keine Angst, Fragen zu stellen!
+>
+> Im Sommersemester 2020 nutzen wir den Slack Channel [https://fub-sys101.slack.com](https://fub-sys101.slack.com)
 
 ## Über DjangoGirls und wie du mithelfen kannst
 
-Dieses Tutorial wurde ursprünglich von [DjangoGirls](https://djangogirls.org/) erstellt. Solltest du Fehler finden oder das Tutorial aktualisieren wollen, dann folge den [Richtlinien zum Mitarbeiten](https://github.com/DjangoGirls/tutorial/blob/master/CONTRIBUTING.md).
+Dieses Tutorial wurde ursprünglich von [DjangoGirls](https://djangogirls.org/) erstellt. Wir haben ihn für euch und den Kurs Systementwicklung angepasst. Solltest du Fehler finden oder das Tutorial aktualisieren wollen.
 
 > Dieses Werk ist unter der Creative Commons Attribution-ShareAlike 4.0 International License lizensiert. Eine Kopie dieser Lizenz finden Sie auf [http://creativecommons.org/licenses/by-sa/4.0/](http://creativecommons.org/licenses/by-sa/4.0/)
 >
-> Es ist eine angepasste Version des Django Girls Tutorials \([https://tutorial.djangogirls.org/de/](https://tutorial.djangogirls.org/de/)\).
+> Das original Django Girls Tutorials findet sich unter [https://tutorial.djangogirls.org/de/](https://tutorial.djangogirls.org/de/)
 
