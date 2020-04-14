@@ -2,11 +2,15 @@
 
 ## Deine Arbeit mit der Gruppe teilen!
 
-Bis jetzt war deine Webseite nur auf deinem Computer verfügbar und du hast alleine für dich gearbeitet. Jetzt wirst du lernen wie du sie teilst. Dafür verwenden wir einen externen Dienst: [GitHub](https://www.github.com). Github ist ein "Code Hosting"-Dienst. Es gibt noch andere solcher Dienste, aber die meisten Programmierer haben heute ein Konto bei GitHub. Deshalb verwenden wir es auch.
+Bis jetzt war deine Webseite nur auf deinem Computer verfügbar und du hast alleine für dich gearbeitet. Jetzt wirst du lernen wie du sie teilst und **gemeinsam** mit anderen an deinem Code arbeiten kannst. Dafür verwenden wir einen externen Dienst: [GitHub](https://www.github.com). Github ist ein "Code Hosting"-Dienst. Es gibt noch andere solcher Dienste, aber die meisten Programmierer haben heute ein Konto bei GitHub. Deshalb verwenden wir es auch.
 
 Nach Einrichtung von Git werden zwei Orte für dich wichtig sein. Die Entwicklung und das Testen wirst du auf deinem lokalen Rechner durchführen. Wenn du mit deinen Änderungen zufrieden bist, wirst du eine Kopie deines Programms auf GitHub veröffentlichen.
 
 ## Git
+
+_Was ist Git und warum brauchen wir es?_
+
+{% embed url="https://youtu.be/BCQHnlnPusY" %}
 
 > **Hinweis:** Falls du die Installationsschritte bereits durchgeführt hast, kannst du mit dem nächsten Abschnitt fortfahren und anfangen, dein Git-Repository zu erstellen.
 
