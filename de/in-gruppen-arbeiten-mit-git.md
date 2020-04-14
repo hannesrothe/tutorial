@@ -160,6 +160,10 @@ To https://github.com/ola/my-first-blog.git
 Branch master set up to track remote branch master from origin.
 ```
 
+Hier steht nun ein neuer Begriff: _Branches_. Was sind Branches?
+
+{% embed url="https://www.youtube.com/watch?v=oPpnCh7InLY" %}
+
 Dein Code ist jetzt auf GitHub. Schau gleich mal nach! Dort ist dein Code in guter Gesellschaft - [Django](https://github.com/django/django), das [Django Girls Tutorial](https://github.com/DjangoGirls/tutorial) und viele andere großartige Open Source Software-Projekte haben ihren Code auf GitHub. :\)
 
 ### Ein bestehendes Git-Repository lokal nutzen
@@ -183,6 +187,12 @@ Nun liegen alle Dateien lokal im Ordner, in dem ihr den Code ausgeführt habt. M
 $ git pull
 ```
 {% endcode %}
+
+### Wie können andere mitarbeiten?
+
+Damit wir gemeinsam an einem Code arbeiten können, sind zwei Begriffe wichtig: _Pull_ und _Fork_. Wir werden insbesondere _Pull_ häufig benötigen.
+
+{% embed url="https://www.youtube.com/watch?v=\_NrSWLQsDL4" %}
 
 Um jedoch Änderungen durchführen zu können und hochzuladen, müssen eure Gruppenmitglieder als Collaborators eingetragen sein:
 
