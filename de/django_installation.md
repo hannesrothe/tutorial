@@ -235,7 +235,7 @@ Schreibe in die Datei `djangogirls/requirements.txt` folgenden Text:
 djangogirls/requirements.txt
 
 ```text
-Django~=2.0.6
+Django~=2.2.12
 ```
 
 Führe nun `pip install -r requirements.txt` aus, um Django zu installieren.
@@ -243,10 +243,10 @@ Führe nun `pip install -r requirements.txt` aus, um Django zu installieren.
 {% code title="in der Kommandozeile" %}
 ```text
 (myvenv) ~$ pip install -r requirements.txt
-Collecting Django~=2.0.6 (from -r requirements.txt (line 1))
-  Downloading Django-2.0.6-py3-none-any.whl (7.1MB)
+Collecting Django~=2.2.12 (from -r requirements.txt (line 1))
+  Downloading Django-2.2.12-py3-none-any.whl (7.1MB)
 Installing collected packages: Django
-Successfully installed Django-2.0.6
+Successfully installed Django-2.2.12
 ```
 {% endcode %}
 
